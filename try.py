@@ -1,6 +1,9 @@
-import math, torch
+import math, torch, ctypes
 from transformers import AutoConfig
 from vllm.attention.ops.triton_unified_attention import unified_attention
+import triton
+from triton.runtime.cache import get_cache_manager  
+
 
 DEVICE        = "cuda"          
 MODEL_ID      = "amd/Meta-Llama-3.1-70B-Instruct-FP8-KV"
@@ -14,10 +17,13 @@ KV_BLOCK  = 32
 DTYPE_Q   = torch.float16                  
 DTYPE_KV  = torch.float16
 assert HEADS_Q % HEADS_KV == 0, "Heads_KV not a multiple of Heads_Q"
-# 1 · CU masks  (split 304 CUs → 30 % for decode, 70 % for pre‑fill)
+# ---- Independent Streams
+#prefill_stream, decode_stream = torch.cuda.Stream(), torch.cuda.Stream()
+# --- CU Masked Stream
+# 30% for decode, 70% Prefill
 N_CU       = 304
 N_DECODE   = int(N_CU * 0.30)                 # 91 CUs for decode
-MASK_WORDS = (N_CU + 31) // 32               # 10 × uint32 words
+MASK_WORDS = (N_CU + 31) // 32               
 
 decode_mask_int  = (1 << N_DECODE) - 1
 prefill_mask_int = ((1 << N_CU) - 1) ^ decode_mask_int
@@ -32,27 +38,27 @@ def int_to_maskarr(mask_int, length):
 mask_bits_decode  = int_to_maskarr(decode_mask_int,  MASK_WORDS)
 mask_bits_prefill = int_to_maskarr(prefill_mask_int, MASK_WORDS)
 
-#def stream_with_cu_mask(mask_bits):
- #   """Return torch.cuda.ExternalStream limited to the given CU mask."""
- #   hip = ctypes.CDLL("libamdhip64.so")
- #   hip.hipExtStreamCreateWithCUMask.restype  = ctypes.c_int
- #   hip.hipExtStreamCreateWithCUMask.argtypes = [
- #       ctypes.POINTER(ctypes.c_void_p), ctypes.c_uint,
- #       ctypes.POINTER(ctypes.c_uint),
- #   ]
- #   raw_stream = ctypes.c_void_p()
- #   mask_arr   = (ctypes.c_uint * len(mask_bits))(*mask_bits)
- #   ret = hip.hipExtStreamCreateWithCUMask(
- #       ctypes.byref(raw_stream), len(mask_bits), mask_arr
- #   )
- #   assert ret == 0, f"HIP err {ret} creating masked stream"
- #   return torch.cuda.ExternalStream(raw_stream.value)
+def stream_with_cu_mask(mask_bits):
+    """Return torch.cuda.ExternalStream limited to the given CU mask."""
+    hip = ctypes.CDLL("libamdhip64.so")
+    hip.hipExtStreamCreateWithCUMask.restype  = ctypes.c_int
+    hip.hipExtStreamCreateWithCUMask.argtypes = [
+        ctypes.POINTER(ctypes.c_void_p), ctypes.c_uint,
+        ctypes.POINTER(ctypes.c_uint),
+    ]
+    raw_stream = ctypes.c_void_p()
+    mask_arr   = (ctypes.c_uint * len(mask_bits))(*mask_bits)
+    ret = hip.hipExtStreamCreateWithCUMask(
+        ctypes.byref(raw_stream), len(mask_bits), mask_arr
+    )
+    assert ret == 0, f"HIP err {ret} creating masked stream"
+    return torch.cuda.ExternalStream(raw_stream.value)
 
-#prefill_stream = stream_with_cu_mask(mask_bits_prefill)
-#decode_stream  = stream_with_cu_mask(mask_bits_decode)
+prefill_stream = stream_with_cu_mask(mask_bits_prefill)
+decode_stream  = stream_with_cu_mask(mask_bits_decode)
 
-#print("Decode CU mask :", [hex(x) for x in mask_bits_decode])
-#print("Prefill CU mask:", [hex(x) for x in mask_bits_prefill])
+print("Decode CU mask :", [hex(x) for x in mask_bits_decode])
+print("Prefill CU mask:", [hex(x) for x in mask_bits_prefill])
 
 
 def make_kv(batch, seqlen, dtype):
@@ -96,8 +102,6 @@ seq_used_k_decode  = torch.full((BATCH_DECODE,),  SEQ_LEN_PREFILL,
 block_table_prefill = build_block_table(BATCH_PREFILL, SEQ_LEN_PREFILL)
 block_table_decode  = build_block_table(BATCH_DECODE,  SEQ_LEN_PREFILL)
 
-# ---- two independent HIP streams --------------------------------
-prefill_stream, decode_stream = torch.cuda.Stream(), torch.cuda.Stream()
 out_prefill  = torch.empty_like(q_prefill)
 out_decode   = torch.empty_like(q_decode)
 
