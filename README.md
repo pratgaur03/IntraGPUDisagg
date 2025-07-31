@@ -20,23 +20,36 @@ This repository demonstrates how to launch the two streams separately with `stan
 
 ## Running the demo
 
-`standalone_attn.py` its very basic currently. You will have to change the parameters like batch sizes and prefill lens. You can specifiy -s masking
+```bash
+# defaults (same as your hard-coded values)
+python standalone_attn.py
+```
 
 ```bash
-# Basic run
-$ python standalone_attn.py \
-        -s masking
+# custom sizes
+python run_unified_attn.py --prefill-batch 8 --decode-batch 128 \
+                           --prefill-len 6144
 ```
+```bash
+# disable CU masking
+python run_unified_attn.py --no-masking
+```
+
 
 ## Collecting & combining metrics
 
 To gather all counters into a single CSV for analysis:
 
 ```bash
+#default
 $ python3 combine_counters.py 
+```
+
+```bash
+# change workload sizes and disable CU masking
+python run_rocprof.py --prefill-batch 8 --decode-batch 128 \
+                      --prefill-len 6144 --no-masking
 ```
 
 Modify metrics.txt file if necessary
 
-
-Licensed under the MIT License – see [`LICENSE`](LICENSE) for details.
