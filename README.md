@@ -7,18 +7,14 @@ This repository demonstrates how to launch the two streams separately with `stan
 
 1. [Prerequisites](#prerequisites)
 2. [Running the demo](#running-the-demo)
-4. [Collecting & combining metrics](#collecting--combining-metrics)
-5. [Repository layout](#repository-layout)
-6. [Troubleshooting](#troubleshooting)
-7. [Contributing](#contributing)
-8. [License](#license)
+3. [Collecting & combining metrics](#collecting--combining-metrics)
 
 ---
 
 ## Prerequisites
 
-> Rocm
-> vllm
+1.  Rocm
+2.  vllm
 ---
 
 
