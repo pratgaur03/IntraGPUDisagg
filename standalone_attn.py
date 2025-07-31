@@ -1,3 +1,4 @@
+import argparse
 import math, torch, ctypes
 from transformers import AutoConfig
 from vllm.attention.ops.triton_unified_attention import unified_attention
@@ -17,16 +18,7 @@ KV_BLOCK  = 32
 DTYPE_Q   = torch.float16                  
 DTYPE_KV  = torch.float16
 assert HEADS_Q % HEADS_KV == 0, "Heads_KV not a multiple of Heads_Q"
-# ---- Independent Streams
-#prefill_stream, decode_stream = torch.cuda.Stream(), torch.cuda.Stream()
-# --- CU Masked Stream
-# 30% for decode, 70% Prefill
-N_CU       = 304
-N_DECODE   = int(N_CU * 0.30)                 # 91 CUs for decode
-MASK_WORDS = (N_CU + 31) // 32               
 
-decode_mask_int  = (1 << N_DECODE) - 1
-prefill_mask_int = ((1 << N_CU) - 1) ^ decode_mask_int
 
 def int_to_maskarr(mask_int, length):
     out = []
@@ -35,15 +27,12 @@ def int_to_maskarr(mask_int, length):
         mask_int >>= 32
     return out
 
-mask_bits_decode  = int_to_maskarr(decode_mask_int,  MASK_WORDS)
-mask_bits_prefill = int_to_maskarr(prefill_mask_int, MASK_WORDS)
-
 def stream_with_cu_mask(mask_bits):
     """Return torch.cuda.ExternalStream limited to the given CU mask."""
-    
     hip.hipExtStreamCreateWithCUMask.restype  = ctypes.c_int
     hip.hipExtStreamCreateWithCUMask.argtypes = [
-        ctypes.POINTER(ctypes.c_void_p), ctypes.c_uint,
+        ctypes.POINTER(ctypes.c_void_p),
+        ctypes.c_uint,
         ctypes.POINTER(ctypes.c_uint),
     ]
     raw_stream = ctypes.c_void_p()
@@ -51,42 +40,28 @@ def stream_with_cu_mask(mask_bits):
     ret = hip.hipExtStreamCreateWithCUMask(
         ctypes.byref(raw_stream), len(mask_bits), mask_arr
     )
-    assert ret == 0, f"HIP err {ret} creating masked stream"
+    assert ret == 0, f"HIP err {ret} creating masked stream"
     return torch.cuda.ExternalStream(raw_stream.value)
 
-prefill_stream = stream_with_cu_mask(mask_bits_prefill)
-decode_stream  = stream_with_cu_mask(mask_bits_decode)
-#prefill_stream = stream_with_cu_mask_and_priority(mask_bits_prefill, priority=0)
-#decode_stream  = stream_with_cu_mask_and_priority(mask_bits_decode , priority=-1)
-#print(hip.hipExtStreamGetCUMask(prefill_stream.cuda_stream))   # prints bit‑vector
-#print(hip.hipExtStreamGetCUMask(decode_stream.cuda_stream))
-
-print("Decode CU mask :", [hex(x) for x in mask_bits_decode])
-print("Prefill CU mask:", [hex(x) for x in mask_bits_prefill])
-
-
-def make_kv(batch, seqlen, dtype):
-
-    n_blocks = (seqlen + KV_BLOCK - 1)//KV_BLOCK
-    k = torch.randn(n_blocks, KV_BLOCK, HEADS_KV, HEAD_DIM,
+def make_kv(batch, seqlen, dtype, heads_kv, head_dim, kv_block):
+    n_blocks = (seqlen + kv_block - 1)//kv_block
+    k = torch.randn(n_blocks, kv_block, heads_kv, head_dim,
                     dtype=dtype, device=DEVICE)
     v = torch.randn_like(k)
     return k, v
 
-def make_q(batch, seqlen):
-    return torch.randn(batch*seqlen, HEADS_Q, HEAD_DIM,
-                       dtype=DTYPE_Q, device=DEVICE)
-
+def make_q(batch, seqlen, dtype_q, heads_q, head_dim):
+    return torch.randn(batch*seqlen, heads_q, head_dim,
+                       dtype=dtype_q, device=DEVICE)
 
 def build_cu_seqlens(batch, seqlen):
     return torch.arange(0, (batch+1)*seqlen, seqlen,
                         dtype=torch.int32, device=DEVICE)
 
-def build_block_table(batch, seqlen):
-    n_blocks = (seqlen + KV_BLOCK - 1)//KV_BLOCK
+def build_block_table(batch, seqlen, kv_block):
+    n_blocks = (seqlen + kv_block - 1)//kv_block
     return torch.arange(n_blocks, dtype=torch.int32,
                         device=DEVICE).expand(batch, n_blocks)
-
 def main():
     parser = argparse.ArgumentParser(
         description="Unified-attention benchmark with optional CU masking"
@@ -146,10 +121,13 @@ def main():
     cu_seqlens_prefill = build_cu_seqlens(args.prefill_batch, args.prefill_len)
     cu_seqlens_decode  = build_cu_seqlens(args.decode_batch, 1)
 
+    print("cu_seqlens_prefill",cu_seqlens_prefill)
+
     seq_used_k_prefill = torch.full((args.prefill_batch,), args.prefill_len,
                                     dtype=torch.int32, device=DEVICE)
     seq_used_k_decode  = torch.full((args.decode_batch,),  args.prefill_len,
                                     dtype=torch.int32, device=DEVICE)
+    print("seq_used_k_prefill",seq_used_k_prefill)
 
     block_table_prefill = build_block_table(args.prefill_batch,
                                             args.prefill_len, KV_BLOCK)

@@ -1,41 +1,9 @@
 # ---- Run 1: pmc: FETCH_SIZE  ----
-INFO 07-31 21:17:44 [__init__.py:244] Automatically detected platform rocm.
-Decode CU mask : ['0xffffffff', '0xffffffff', '0x7ffffff', '0x0', '0x0', '0x0', '0x0', '0x0', '0x0', '0x0']
-Prefill CU mask: ['0x0', '0x0', '0xf8000000', '0xffffffff', '0xffffffff', '0xffffffff', '0xffffffff', '0xffffffff', '0xffffffff', '0xffff']
-Mean of output for both -0.0003752708435058594 -0.0528564453125
-[0;31mE20250731 21:17:57.672944 140116485203712 output_stream.cpp:105] Opened result file: /workspace/IntraGPUDisagg/pmc_1/useocpm2m-438-016/568791_counter_collection.csv
-[m[0;31mE20250731 21:17:57.682125 140116485203712 output_stream.cpp:105] Opened result file: /workspace/IntraGPUDisagg/pmc_1/useocpm2m-438-016/568791_agent_info.csv
-[m[0;33mW20250731 21:18:06.634524 140116485203712 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
-[m# ---- Run 2: pmc: WRITE_SIZE BANDWIDTH_EA ----
-INFO 07-31 21:18:11 [__init__.py:244] Automatically detected platform rocm.
-Decode CU mask : ['0xffffffff', '0xffffffff', '0x7ffffff', '0x0', '0x0', '0x0', '0x0', '0x0', '0x0', '0x0']
-Prefill CU mask: ['0x0', '0x0', '0xf8000000', '0xffffffff', '0xffffffff', '0xffffffff', '0xffffffff', '0xffffffff', '0xffffffff', '0xffff']
-Mean of output for both 0.0002849102020263672 -0.00656890869140625
-[0;31mE20250731 21:18:23.856925 140574519142144 output_stream.cpp:105] Opened result file: /workspace/IntraGPUDisagg/pmc_1/useocpm2m-438-016/569186_counter_collection.csv
-[m[0;31mE20250731 21:18:23.866203 140574519142144 output_stream.cpp:105] Opened result file: /workspace/IntraGPUDisagg/pmc_1/useocpm2m-438-016/569186_agent_info.csv
-[m[0;33mW20250731 21:18:32.741869 140574519142144 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
-[m# ---- Run 3: pmc: TCC_HIT_sum TCC_MISS_sum TCC_REQ_sum ----
-INFO 07-31 21:18:37 [__init__.py:244] Automatically detected platform rocm.
-Decode CU mask : ['0xffffffff', '0xffffffff', '0x7ffffff', '0x0', '0x0', '0x0', '0x0', '0x0', '0x0', '0x0']
-Prefill CU mask: ['0x0', '0x0', '0xf8000000', '0xffffffff', '0xffffffff', '0xffffffff', '0xffffffff', '0xffffffff', '0xffffffff', '0xffff']
-Mean of output for both 0.00023448467254638672 0.01294708251953125
-[0;31mE20250731 21:18:50.024414 139940586137344 output_stream.cpp:105] Opened result file: /workspace/IntraGPUDisagg/pmc_1/useocpm2m-438-016/569581_counter_collection.csv
-[m[0;31mE20250731 21:18:50.033556 139940586137344 output_stream.cpp:105] Opened result file: /workspace/IntraGPUDisagg/pmc_1/useocpm2m-438-016/569581_agent_info.csv
-[m[0;33mW20250731 21:18:59.401071 139940586137344 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
-[m# ---- Run 4: pmc: SQ_BUSY_CU_CYCLES SQ_BUSY_CYCLES ----
-INFO 07-31 21:19:03 [__init__.py:244] Automatically detected platform rocm.
-Decode CU mask : ['0xffffffff', '0xffffffff', '0x7ffffff', '0x0', '0x0', '0x0', '0x0', '0x0', '0x0', '0x0']
-Prefill CU mask: ['0x0', '0x0', '0xf8000000', '0xffffffff', '0xffffffff', '0xffffffff', '0xffffffff', '0xffffffff', '0xffffffff', '0xffff']
-Mean of output for both 0.0008940696716308594 -0.02142333984375
-[0;31mE20250731 21:19:16.423353 139932525508352 output_stream.cpp:105] Opened result file: /workspace/IntraGPUDisagg/pmc_1/useocpm2m-438-016/570008_counter_collection.csv
-[m[0;31mE20250731 21:19:16.432365 139932525508352 output_stream.cpp:105] Opened result file: /workspace/IntraGPUDisagg/pmc_1/useocpm2m-438-016/570008_agent_info.csv
-[m[0;33mW20250731 21:19:25.710679 139932525508352 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
-[m# ---- Run 5: pmc: CU_NUM OccupancyPercent MfmaFlops     ----
-INFO 07-31 21:19:30 [__init__.py:244] Automatically detected platform rocm.
-Decode CU mask : ['0xffffffff', '0xffffffff', '0x7ffffff', '0x0', '0x0', '0x0', '0x0', '0x0', '0x0', '0x0']
-Prefill CU mask: ['0x0', '0x0', '0xf8000000', '0xffffffff', '0xffffffff', '0xffffffff', '0xffffffff', '0xffffffff', '0xffffffff', '0xffff']
-Mean of output for both -0.00014507770538330078 -0.0146636962890625
-[0;31mE20250731 21:19:42.738132 140254632175360 output_stream.cpp:105] Opened result file: /workspace/IntraGPUDisagg/pmc_1/useocpm2m-438-016/570444_counter_collection.csv
-[m[0;31mE20250731 21:19:42.747268 140254632175360 output_stream.cpp:105] Opened result file: /workspace/IntraGPUDisagg/pmc_1/useocpm2m-438-016/570444_agent_info.csv
-[m[0;33mW20250731 21:19:52.160656 140254632175360 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+INFO 07-31 21:55:08 [__init__.py:244] Automatically detected platform rocm.
+cu_seqlens_prefill tensor([    0,  4096,  8192, 12288, 16384], device='cuda:0', dtype=torch.int32)
+seq_used_k_prefill tensor([4096, 4096, 4096, 4096], device='cuda:0', dtype=torch.int32)
+Mean of outputs: -0.0002474784851074219 0.036895751953125
+[0;31mE20250731 21:55:20.953038 139928022243072 output_stream.cpp:105] Opened result file: /workspace/IntraGPUDisagg/pmc_1/useocpm2m-438-016/593409_counter_collection.csv
+[m[0;31mE20250731 21:55:20.961772 139928022243072 output_stream.cpp:105] Opened result file: /workspace/IntraGPUDisagg/pmc_1/useocpm2m-438-016/593409_agent_info.csv
+[m[0;33mW20250731 21:55:29.214003 139928022243072 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
 [m
