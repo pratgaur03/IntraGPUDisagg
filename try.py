@@ -4,7 +4,7 @@ from vllm.attention.ops.triton_unified_attention import unified_attention
 import triton
 from triton.runtime.cache import get_cache_manager  
 
-
+hip = ctypes.CDLL("libamdhip64.so")
 DEVICE        = "cuda"          
 MODEL_ID      = "amd/Meta-Llama-3.1-70B-Instruct-FP8-KV"
 
@@ -40,7 +40,7 @@ mask_bits_prefill = int_to_maskarr(prefill_mask_int, MASK_WORDS)
 
 def stream_with_cu_mask(mask_bits):
     """Return torch.cuda.ExternalStream limited to the given CU mask."""
-    hip = ctypes.CDLL("libamdhip64.so")
+    
     hip.hipExtStreamCreateWithCUMask.restype  = ctypes.c_int
     hip.hipExtStreamCreateWithCUMask.argtypes = [
         ctypes.POINTER(ctypes.c_void_p), ctypes.c_uint,
@@ -53,9 +53,37 @@ def stream_with_cu_mask(mask_bits):
     )
     assert ret == 0, f"HIP err {ret} creating masked stream"
     return torch.cuda.ExternalStream(raw_stream.value)
+def stream_with_cu_mask_and_priority(mask_bits, priority=0):
+    """
+    Return torch.cuda.ExternalStream limited to the given CU mask and with the specified priority.
+    """
 
+    # 1. Create the stream with the CU mask
+    hip.hipExtStreamCreateWithCUMask.restype  = ctypes.c_int
+    hip.hipExtStreamCreateWithCUMask.argtypes = [
+        ctypes.POINTER(ctypes.c_void_p), ctypes.c_uint,
+        ctypes.POINTER(ctypes.c_uint),
+    ]
+    raw_stream = ctypes.c_void_p()
+    mask_arr   = (ctypes.c_uint * len(mask_bits))(*mask_bits)
+    ret = hip.hipExtStreamCreateWithCUMask(
+        ctypes.byref(raw_stream), len(mask_bits), mask_arr
+    )
+    assert ret == 0, f"HIP error {ret} creating masked stream"
+
+    # 2. Set the priority of the newly created stream
+    hip.hipStreamSetPriority.restype = ctypes.c_int
+    hip.hipStreamSetPriority.argtypes = [ctypes.c_void_p, ctypes.c_int]
+    ret = hip.hipStreamSetPriority(raw_stream, priority)
+    assert ret == 0, f"HIP error {ret} setting stream priority"
+
+    return torch.cuda.ExternalStream(raw_stream.value)
 prefill_stream = stream_with_cu_mask(mask_bits_prefill)
 decode_stream  = stream_with_cu_mask(mask_bits_decode)
+#prefill_stream = stream_with_cu_mask_and_priority(mask_bits_prefill, priority=0)
+#decode_stream  = stream_with_cu_mask_and_priority(mask_bits_decode , priority=-1)
+#print(hip.hipExtStreamGetCUMask(prefill_stream.cuda_stream))   # prints bit‑vector
+#print(hip.hipExtStreamGetCUMask(decode_stream.cuda_stream))
 
 print("Decode CU mask :", [hex(x) for x in mask_bits_decode])
 print("Prefill CU mask:", [hex(x) for x in mask_bits_prefill])
@@ -72,6 +100,7 @@ def make_q(batch, seqlen):
     return torch.randn(batch*seqlen, HEADS_Q, HEAD_DIM,
                        dtype=DTYPE_Q, device=DEVICE)
 
+
 def build_cu_seqlens(batch, seqlen):
     return torch.arange(0, (batch+1)*seqlen, seqlen,
                         dtype=torch.int32, device=DEVICE)
@@ -82,8 +111,8 @@ def build_block_table(batch, seqlen):
                         device=DEVICE).expand(batch, n_blocks)
 
 # ---- workload ----------------------------------------------
-BATCH_PREFILL, BATCH_DECODE   = 4, 4
-SEQ_LEN_PREFILL               = 128
+BATCH_PREFILL, BATCH_DECODE   = 4, 200
+SEQ_LEN_PREFILL               = 4096
 
 q_prefill = make_q(BATCH_PREFILL, SEQ_LEN_PREFILL)
 k_prefill, v_prefill = make_kv(BATCH_PREFILL, SEQ_LEN_PREFILL, DTYPE_KV)

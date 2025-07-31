@@ -1,0 +1,2 @@
+pmc: TCC_HIT_sum TCC_MISS_sum TCC_REQ_sum
+gpu:5                 
