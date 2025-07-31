@@ -1,2 +1,2 @@
 pmc: SQ_BUSY_CU_CYCLES SQ_BUSY_CYCLES
-gpu:5                 
+gpu:0

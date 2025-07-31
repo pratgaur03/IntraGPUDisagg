@@ -1,2 +1,2 @@
 pmc: CU_NUM OccupancyPercent MfmaFlops    
-gpu:5                 
+gpu:0

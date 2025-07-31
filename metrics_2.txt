@@ -1,2 +1,2 @@
 pmc: WRITE_SIZE BANDWIDTH_EA
-gpu:5                 
+gpu:0

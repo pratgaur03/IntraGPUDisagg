@@ -3,4 +3,4 @@ pmc: WRITE_SIZE BANDWIDTH_EA
 pmc: TCC_HIT_sum TCC_MISS_sum TCC_REQ_sum
 pmc: SQ_BUSY_CU_CYCLES SQ_BUSY_CYCLES
 pmc: CU_NUM OccupancyPercent MfmaFlops    
-gpu:5                 
+gpu:0

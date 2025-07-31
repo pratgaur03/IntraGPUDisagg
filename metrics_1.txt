@@ -1,2 +1,2 @@
 pmc: FETCH_SIZE 
-gpu:5                 
+gpu:0
