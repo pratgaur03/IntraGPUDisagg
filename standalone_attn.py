@@ -18,7 +18,7 @@ DTYPE_Q   = torch.float16
 DTYPE_KV  = torch.float16
 assert HEADS_Q % HEADS_KV == 0, "Heads_KV not a multiple of Heads_Q"
 # ---- Independent Streams
-prefill_stream, decode_stream = torch.cuda.Stream(), torch.cuda.Stream()
+#prefill_stream, decode_stream = torch.cuda.Stream(), torch.cuda.Stream()
 # --- CU Masked Stream
 # 30% for decode, 70% Prefill
 N_CU       = 304
@@ -54,8 +54,8 @@ def stream_with_cu_mask(mask_bits):
     assert ret == 0, f"HIP err {ret} creating masked stream"
     return torch.cuda.ExternalStream(raw_stream.value)
 
-#prefill_stream = stream_with_cu_mask(mask_bits_prefill)
-#decode_stream  = stream_with_cu_mask(mask_bits_decode)
+prefill_stream = stream_with_cu_mask(mask_bits_prefill)
+decode_stream  = stream_with_cu_mask(mask_bits_decode)
 #prefill_stream = stream_with_cu_mask_and_priority(mask_bits_prefill, priority=0)
 #decode_stream  = stream_with_cu_mask_and_priority(mask_bits_decode , priority=-1)
 #print(hip.hipExtStreamGetCUMask(prefill_stream.cuda_stream))   # prints bit‑vector
@@ -66,6 +66,7 @@ print("Prefill CU mask:", [hex(x) for x in mask_bits_prefill])
 
 
 def make_kv(batch, seqlen, dtype):
+
     n_blocks = (seqlen + KV_BLOCK - 1)//KV_BLOCK
     k = torch.randn(n_blocks, KV_BLOCK, HEADS_KV, HEAD_DIM,
                     dtype=dtype, device=DEVICE)
@@ -86,68 +87,110 @@ def build_block_table(batch, seqlen):
     return torch.arange(n_blocks, dtype=torch.int32,
                         device=DEVICE).expand(batch, n_blocks)
 
-# ---- workload ----------------------------------------------
-BATCH_PREFILL, BATCH_DECODE   = 4, 200
-SEQ_LEN_PREFILL               = 4096
-ITR = 4
-q_prefills,q_decodes=[],[]
-k_prefills,k_decodes=[],[]
-v_prefills,v_decodes=[],[]
-for i in range(ITR+1):
-    q_prefill = make_q(BATCH_PREFILL, SEQ_LEN_PREFILL)
-    q_prefills.append(q_prefill)
-    k_prefill, v_prefill = make_kv(BATCH_PREFILL, SEQ_LEN_PREFILL, DTYPE_KV)
-    k_prefills.append(k_prefill)
-    v_prefills.append(v_prefill)
-
-    q_decode  = make_q(BATCH_DECODE, 1)
-    q_decodes.append(q_decode)
-    k_decode, v_decode  = make_kv(BATCH_DECODE, SEQ_LEN_PREFILL, DTYPE_KV)
-    k_decodes.append(k_decode)
-    v_decodes.append(v_decode)
+def main():
+    parser = argparse.ArgumentParser(
+        description="Unified-attention benchmark with optional CU masking"
+    )
+    parser.add_argument("--prefill-batch",  type=int, default=4)
+    parser.add_argument("--decode-batch",   type=int, default=200)
+    parser.add_argument("--prefill-len",    type=int, default=4096,
+                        help="Sequence length for prefill")
+    parser.add_argument("--masking", dest="masking", action="store_true",
+                        help="Enable CU-mask streams (default)")
+    parser.add_argument("--no-masking", dest="masking", action="store_false",
+                        help="Disable CU-mask streams")
+    parser.set_defaults(masking=True)
+    parser.add_argument("--iters", type=int, default=4,
+                        help="Number of timed iterations")
+    args = parser.parse_args()
 
 
+    # ---- CU-mask or plain streams -------------------------------------
+    if args.masking:
+        N_CU       = 304
+        N_DECODE   = int(N_CU * 0.30)
+        MASK_WORDS = (N_CU + 31) // 32
+        decode_mask_int  = (1 << N_DECODE) - 1
+        prefill_mask_int = ((1 << N_CU) - 1) ^ decode_mask_int
+        mask_bits_decode  = int_to_maskarr(decode_mask_int,  MASK_WORDS)
+        mask_bits_prefill = int_to_maskarr(prefill_mask_int, MASK_WORDS)
+        prefill_stream = stream_with_cu_mask(mask_bits_prefill)
+        decode_stream  = stream_with_cu_mask(mask_bits_decode)
+    else:
+        prefill_stream = torch.cuda.Stream()
+        decode_stream  = torch.cuda.Stream()
 
-cu_seqlens_prefill = build_cu_seqlens(BATCH_PREFILL, SEQ_LEN_PREFILL)
-cu_seqlens_decode  = build_cu_seqlens(BATCH_DECODE, 1)
+    # ---- workload tensors ---------------------------------------------
+    ITR = args.iters
+    q_prefills=q_decodes=[]  # dummy init to satisfy linter
 
-seq_used_k_prefill = torch.full((BATCH_PREFILL,), SEQ_LEN_PREFILL,
-                                dtype=torch.int32, device=DEVICE)
-seq_used_k_decode  = torch.full((BATCH_DECODE,),  SEQ_LEN_PREFILL,
-                                dtype=torch.int32, device=DEVICE)
+    q_prefills, k_prefills, v_prefills = [], [], []
+    q_decodes,  k_decodes,  v_decodes  = [], [], []
 
-block_table_prefill = build_block_table(BATCH_PREFILL, SEQ_LEN_PREFILL)
-block_table_decode  = build_block_table(BATCH_DECODE,  SEQ_LEN_PREFILL)
+    for _ in range(ITR+1):
+        q_prefills.append(
+            make_q(args.prefill_batch, args.prefill_len,
+                   DTYPE_Q, HEADS_Q, HEAD_DIM)
+        )
+        k, v = make_kv(args.prefill_batch, args.prefill_len,
+                       DTYPE_KV, HEADS_KV, HEAD_DIM, KV_BLOCK)
+        k_prefills.append(k); v_prefills.append(v)
 
-out_prefill  = torch.empty_like(q_prefill)
-out_decode   = torch.empty_like(q_decode)
+        q_decodes.append(
+            make_q(args.decode_batch, 1, DTYPE_Q, HEADS_Q, HEAD_DIM)
+        )
+        k, v = make_kv(args.decode_batch, args.prefill_len,
+                       DTYPE_KV, HEADS_KV, HEAD_DIM, KV_BLOCK)
+        k_decodes.append(k); v_decodes.append(v)
 
-common = dict(softmax_scale=1/HEAD_DIM**0.5,
-              causal=True, window_size=(0,0), softcap=0.0,
-              q_descale=None, k_descale=None, v_descale=None,
-              alibi_slopes=None)
+    cu_seqlens_prefill = build_cu_seqlens(args.prefill_batch, args.prefill_len)
+    cu_seqlens_decode  = build_cu_seqlens(args.decode_batch, 1)
 
-# ----- Warmup ----------
-unified_attention(q_prefills[0], k_prefills[0], v_prefills[0], out_prefill,
-                      cu_seqlens_prefill, SEQ_LEN_PREFILL,
-                      seq_used_k_prefill, SEQ_LEN_PREFILL,
+    seq_used_k_prefill = torch.full((args.prefill_batch,), args.prefill_len,
+                                    dtype=torch.int32, device=DEVICE)
+    seq_used_k_decode  = torch.full((args.decode_batch,),  args.prefill_len,
+                                    dtype=torch.int32, device=DEVICE)
+
+    block_table_prefill = build_block_table(args.prefill_batch,
+                                            args.prefill_len, KV_BLOCK)
+    block_table_decode  = build_block_table(args.decode_batch,
+                                            args.prefill_len, KV_BLOCK)
+
+    out_prefill = torch.empty_like(q_prefills[0])
+    out_decode  = torch.empty_like(q_decodes[0])
+
+    common = dict(softmax_scale=1/HEAD_DIM**0.5,
+                  causal=True, window_size=(0,0), softcap=0.0,
+                  q_descale=None, k_descale=None, v_descale=None,
+                  alibi_slopes=None)
+
+    # ---------- warm-up + timed loop -----------------------------------
+    unified_attention(q_prefills[0], k_prefills[0], v_prefills[0], out_prefill,
+                      cu_seqlens_prefill, args.prefill_len,
+                      seq_used_k_prefill, args.prefill_len,
                       block_table=block_table_prefill, **common)
-torch.cuda.synchronize()
-#with torch.cuda.stream(prefill_stream):
-#    for i in range(1,ITR+1):
-#        unified_attention(q_prefills[i], k_prefills[i], v_prefills[i], out_prefill,
-#                        cu_seqlens_prefill, SEQ_LEN_PREFILL,
-#                        seq_used_k_prefill, SEQ_LEN_PREFILL,
-#                        block_table=block_table_prefill, **common)
+    torch.cuda.synchronize()
 
-with torch.cuda.stream(decode_stream):
-    for i in range(1,ITR+1):
-        unified_attention(q_decodes[i], k_decodes[i], v_decodes[i], out_decode,
-                      cu_seqlens_decode, 1,
-                      seq_used_k_decode, SEQ_LEN_PREFILL,
-                      block_table=block_table_decode, **common)
+    with torch.cuda.stream(prefill_stream):
+        for i in range(1, ITR+1):
+            unified_attention(q_prefills[i], k_prefills[i], v_prefills[i],
+                              out_prefill,
+                              cu_seqlens_prefill, args.prefill_len,
+                              seq_used_k_prefill, args.prefill_len,
+                              block_table=block_table_prefill, **common)
+
+    with torch.cuda.stream(decode_stream):
+        for i in range(1, ITR+1):
+            unified_attention(q_decodes[i], k_decodes[i], v_decodes[i],
+                              out_decode,
+                              cu_seqlens_decode, 1,
+                              seq_used_k_decode, args.prefill_len,
+                              block_table=block_table_decode, **common)
+
+    prefill_stream.synchronize(); decode_stream.synchronize()
+    print("Mean of outputs:",
+          out_prefill.mean().item(), out_decode.mean().item())
 
 
-prefill_stream.synchronize(); decode_stream.synchronize()
-print("Mean of output for both", out_prefill.mean().item(), out_decode.mean().item())
-
+if __name__ == "__main__":
+    main()
