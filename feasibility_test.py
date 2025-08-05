@@ -25,7 +25,7 @@ def build_wl_args(row) -> list[str]:
         "--iters",         "5",
        
     ]
-    if row["CU mask"]=='NA':
+    if type(row["CU mask"])!=int:
         args.append("--no-masking")
     else:
         args += ["--decode-mask", str(int(row["CU mask"]))]
