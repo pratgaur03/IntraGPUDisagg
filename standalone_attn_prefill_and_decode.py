@@ -1,18 +1,18 @@
 import argparse
 import math, torch, ctypes
 from transformers import AutoConfig
-from vllm.attention.ops.triton_unified_attention import unified_attention
+# from vllm.attention.ops.triton_unified_attention import unified_attention
 import triton
 from triton.runtime.cache import get_cache_manager  
-
+from triton_unified_attention_2d import unified_attention
 hip = ctypes.CDLL("libamdhip64.so")
 DEVICE        = "cuda"          
 MODEL_ID      = "amd/Meta-Llama-3.1-70B-Instruct-FP8-KV"
 
 # ---- model amd quantized llama 3.1 70B--------------------------------
 cfg       = AutoConfig.from_pretrained(MODEL_ID)
-HEADS_Q   = cfg.num_attention_heads        # 64
-HEADS_KV  = cfg.num_key_value_heads        #  8
+HEADS_Q   = 8        # 64
+HEADS_KV  = 1        #  8
 HEAD_DIM  = cfg.head_dim                   # 128
 KV_BLOCK  = 32                             
 DTYPE_Q   = torch.float16                  
@@ -63,6 +63,7 @@ def build_block_table(batch, seqlen, kv_block):
     return torch.arange(n_blocks, dtype=torch.int32,
                         device=DEVICE).expand(batch, n_blocks)
 def main():
+    global HEADS_Q, HEADS_KV
     parser = argparse.ArgumentParser(
         description="Unified-attention benchmark with optional CU masking"
     )
@@ -80,6 +81,7 @@ def main():
     parser.add_argument("--iters", type=int, default=5,
                         help="Number of timed iterations")
     parser.add_argument("--decode-mask",  type=int, default=96)
+    parser.add_argument("--tp",  type=int, default=1)
     args = parser.parse_args()
 
 
@@ -101,6 +103,10 @@ def main():
         prefill_stream = torch.cuda.Stream()
         decode_stream  = torch.cuda.Stream()
 
+    if args.tp !=1:
+        HEADS_Q   = int(cfg.num_attention_heads/args.tp)       # 8
+        HEADS_KV  = int(cfg.num_key_value_heads/args.tp) # 1
+        print("args.tp", args.tp)
     # ---- workload tensors ---------------------------------------------
     ITR = args.iters
     q_prefills=q_decodes=[]  # dummy init to satisfy linter

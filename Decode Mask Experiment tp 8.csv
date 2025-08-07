@@ -1,0 +1,6 @@
+﻿Prefill Len,Prefill Batch,Decode batch size,Decode len,CU mask
+2048,1,32,256,48
+2048,1,32,512,48
+2048,1,32,1024,48
+2048,1,32,2048,48
+2048,1,32,4096,48

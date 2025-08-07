@@ -10,8 +10,8 @@ WORKLOADS = [
     Path("standalone_attn_decode.py"),
     Path("standalone_attn_prefill_and_decode.py"),
 ]
-CSV_PATH  = Path("./Decode Mask Experiment.csv")
-LOG_FILE  = Path("rocprof_runs.log")
+CSV_PATH  = Path("./attention_kernel.csv")
+LOG_FILE  = Path("rocprof_runs_2d.log")
 # -----------------------------------------------------------------------
 
 
@@ -25,7 +25,7 @@ def build_wl_args(row) -> list[str]:
         "--iters",         "5",
        
     ]
-    if type(row["CU mask"])!=int:
+    if type(row["CU mask"])!=int or row["CU mask"]==np.nan or row["CU mask"]=="NA":
         args.append("--no-masking")
     else:
         args += ["--decode-mask", str(int(row["CU mask"]))]
@@ -42,7 +42,7 @@ def main() -> None:
         tag = (
             f"{row['Prefill Batch']}_{row['Prefill Len']}_"
             f"{row['Decode batch size']}_{row['Decode len']}_"
-            f"{row['CU mask']}"
+            f"{row['CU mask']}_tp8_unified_attention_2d"
         )
 
         for script in WORKLOADS:
