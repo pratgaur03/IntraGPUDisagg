@@ -1,18 +1,18 @@
 import argparse
 import math, torch, ctypes
 from transformers import AutoConfig
-# from vllm.attention.ops.triton_unified_attention import unified_attention
+from vllm.attention.ops.triton_unified_attention import unified_attention
 import triton
 from triton.runtime.cache import get_cache_manager  
-from triton_unified_attention_2d import unified_attention
+# from triton_unified_attention_2d import unified_attention
 hip = ctypes.CDLL("libamdhip64.so")
 DEVICE        = "cuda"          
 MODEL_ID      = "amd/Meta-Llama-3.1-70B-Instruct-FP8-KV"
 
 # ---- model amd quantized llama 3.1 70B--------------------------------
 cfg       = AutoConfig.from_pretrained(MODEL_ID)
-HEADS_Q   = 8        # 64
-HEADS_KV  = 1        #  8
+HEADS_Q   = cfg.num_attention_heads         # 64
+HEADS_KV  = cfg.num_key_value_heads        #  8
 HEAD_DIM  = cfg.head_dim                   # 128
 KV_BLOCK  = 32                             
 DTYPE_Q   = torch.float16                  

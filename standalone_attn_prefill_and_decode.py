@@ -1,18 +1,18 @@
 import argparse
 import math, torch, ctypes
 from transformers import AutoConfig
-# from vllm.attention.ops.triton_unified_attention import unified_attention
+from vllm.attention.ops.triton_unified_attention import unified_attention
 import triton
 from triton.runtime.cache import get_cache_manager  
-from triton_unified_attention_2d import unified_attention
+# from triton_unified_attention_2d import unified_attention
 hip = ctypes.CDLL("libamdhip64.so")
 DEVICE        = "cuda"          
 MODEL_ID      = "amd/Meta-Llama-3.1-70B-Instruct-FP8-KV"
 
 # ---- model amd quantized llama 3.1 70B--------------------------------
 cfg       = AutoConfig.from_pretrained(MODEL_ID)
-HEADS_Q   = 8        # 64
-HEADS_KV  = 1        #  8
+HEADS_Q   = 64
+HEADS_KV  = 8
 HEAD_DIM  = cfg.head_dim                   # 128
 KV_BLOCK  = 32                             
 DTYPE_Q   = torch.float16                  
@@ -103,10 +103,7 @@ def main():
         prefill_stream = torch.cuda.Stream()
         decode_stream  = torch.cuda.Stream()
 
-    if args.tp !=1:
-        HEADS_Q   = int(cfg.num_attention_heads/args.tp)       # 8
-        HEADS_KV  = int(cfg.num_key_value_heads/args.tp) # 1
-        print("args.tp", args.tp)
+   
     # ---- workload tensors ---------------------------------------------
     ITR = args.iters
     q_prefills=q_decodes=[]  # dummy init to satisfy linter
