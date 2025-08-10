@@ -11,8 +11,10 @@ MODEL_ID      = "amd/Meta-Llama-3.1-70B-Instruct-FP8-KV"
 
 # ---- model amd quantized llama 3.1 70B--------------------------------
 cfg       = AutoConfig.from_pretrained(MODEL_ID)
-HEADS_Q   = cfg.num_attention_heads         # 64
-HEADS_KV  = cfg.num_key_value_heads        #  8
+HEADS_Q   = 8
+# cfg.num_attention_heads         # 64
+HEADS_KV  = 1
+# cfg.num_key_value_heads        #  8
 HEAD_DIM  = cfg.head_dim                   # 128
 KV_BLOCK  = 32                             
 DTYPE_Q   = torch.float16                  

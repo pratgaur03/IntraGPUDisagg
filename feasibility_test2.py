@@ -17,7 +17,7 @@ WORKLOADS = [
     Path("standalone_attn_prefill.py")
 ]
 prefill_batch=[1]
-prefill_len=[512, 1024,2048,4096,8192,16384,32768,65536,131072]
+prefill_len=[2048]
 cu_mask=[np.nan,32,64,96,128,160]
 LOG_FILE  = Path("rocprof_runs2.log")
 # -----------------------------------------------------------------------
@@ -57,7 +57,7 @@ def main() -> None:
                     wl_args += ["--decode-mask", str(c)]
 
                 tag = (
-                    f"prefill_isolation_"
+                    f"testing"
                     f"{b}_{l}_"
                     f"{c}"
                 )
@@ -71,6 +71,13 @@ def main() -> None:
                         "-o", trace_name,
                         "--", "python3", str(script), *wl_args,
                     ]
+                    # cmd = [
+                    #     "rocprofv3", "-i", "metrics_2.txt",
+                    #     "-d", "./profiles",
+                    #     "-o", trace_name,
+                    #     "--", "python3", str(script), *wl_args,
+                    # ]
+                    
 
                     # (Re-)create log file per run
                     # LOG_FILE.unlink(missing_ok=True)

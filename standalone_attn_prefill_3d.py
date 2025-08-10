@@ -88,7 +88,6 @@ def main():
     # ---- CU-mask or plain streams -------------------------------------
     if args.masking:
         N_CU       = 304
-        # N_DECODE   = int(N_CU * 0.30)
         N_DECODE=args.decode_mask
         MASK_WORDS = (N_CU + 31) // 32
         decode_mask_int  = (1 << N_DECODE) - 1

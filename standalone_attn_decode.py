@@ -68,11 +68,11 @@ def main():
     parser = argparse.ArgumentParser(
         description="Unified-attention benchmark with optional CU masking"
     )
-    parser.add_argument("--prefill-batch",  type=int, default=4)
-    parser.add_argument("--decode-batch",   type=int, default=200)
-    parser.add_argument("--prefill-len",    type=int, default=4096,
+    parser.add_argument("--prefill-batch",  type=int, default=1)
+    parser.add_argument("--decode-batch",   type=int, default=1)
+    parser.add_argument("--prefill-len",    type=int, default=2048,
                         help="Sequence length for prefill")
-    parser.add_argument("--decode-len",    type=int, default=4096,
+    parser.add_argument("--decode-len",    type=int, default=2048,
                         help="Sequence length for Decodes")
     parser.add_argument("--masking", dest="masking", action="store_true",
                         help="Enable CU-mask streams (default)")
@@ -81,7 +81,7 @@ def main():
     parser.set_defaults(masking=True)
     parser.add_argument("--iters", type=int, default=5,
                         help="Number of timed iterations")
-    parser.add_argument("--decode-mask",  type=int, default=96)
+    parser.add_argument("--decode-mask",  type=int, default=304)
     parser.add_argument("--tp",  type=int, default=1)
     args = parser.parse_args()
 
