@@ -8,8 +8,8 @@ import numpy as np
 WORKLOADS = [
     Path("standalone_attn_decode.py")
 ]
-decode_batch=[8,16]
-decode_len=[256,512,1024,2048,4096,8192,16384]
+decode_batch=[32,64,128]
+decode_len=[256,512,1024,2048,4096,8192]
 cu_mask=[np.nan,32,64,96,128,160]
 LOG_FILE  = Path("rocprof_runs3.log")
 # -----------------------------------------------------------------------
@@ -32,7 +32,7 @@ def main() -> None:
                     wl_args += ["--decode-mask", str(c)]
 
                 tag = (
-                    f"decode_isolation_"
+                    f"tp8_"
                     f"{b}_{l}_"
                     f"{c}"
                 )
@@ -40,18 +40,18 @@ def main() -> None:
                 for script in WORKLOADS:
                     trace_name = f"{script.stem}_{tag}"
 
-                    # cmd = [
-                    #     "rocprofv3", "--kernel-trace",
-                    #     "-d", "./profiles",
-                    #     "-o", trace_name,
-                    #     "--", "python3", str(script), *wl_args,
-                    # ]
                     cmd = [
-                        "rocprofv3", "-i", "metrics_2.txt",
+                        "rocprofv3", "--kernel-trace",
                         "-d", "./profiles",
                         "-o", trace_name,
                         "--", "python3", str(script), *wl_args,
                     ]
+                    # cmd = [
+                    #     "rocprofv3", "-i", "metrics_1.txt",
+                    #     "-d", "./profiles",
+                    #     "-o", trace_name,
+                    #     "--", "python3", str(script), *wl_args,
+                    # ]
 
 
                     # (Re-)create log file per run

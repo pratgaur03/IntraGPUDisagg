@@ -8,10 +8,10 @@ import numpy as np
 WORKLOADS = [
     Path("standalone_attn_prefill_and_decode.py"),
 ]
-prefill_batch=[1]
-prefill_len=[512, 1024,2048,4096,8192,16384,32768,65536,131072]
-decode_batch=[1,8,16,32,64,128]
-decode_len=[2048]
+prefill_batch=[4, 8,16]
+prefill_len=[256,512,1024,2048,4096,8192]
+decode_batch=[1,2,4,8,16,32,64,128]
+decode_len=[256,512,1024,2048,4096,8192]
 cu_mask=[np.nan,32,64,96,128,160]
 LOG_FILE  = Path("rocprof_runs3.log")
 # CSV_PATH  = Path("./attention_kernel.csv")
@@ -68,7 +68,7 @@ def main() -> None:
                             wl_args += ["--decode-mask", str(c)]
 
                         tag = (
-                            f"interference_"
+                            f"tp8_"
                             f"{pb}_{pl}_{db}_{dl}"
                             f"{c}"
                         )

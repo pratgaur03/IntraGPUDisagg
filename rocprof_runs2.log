@@ -14928,4 +14928,734 @@ INFO 08-10 21:57:02 [__init__.py:244] Automatically detected platform rocm.
 [0;31mE20250810 21:57:15.770317 140486306625280 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_testing1_2048_160_kernel_trace.csv
 [m[0;31mE20250810 21:57:15.776415 140486306625280 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_testing1_2048_160_agent_info.csv
 [m[0;33mW20250810 21:57:24.548662 140486306625280 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_testing1_2048_nan ----
+INFO 08-10 22:14:33 [__init__.py:244] Automatically detected platform rocm.
+No masking
+[0;31mE20250810 22:14:46.783629 140538561500928 output_stream.cpp:105] Opened result file: ./profiles/pmc_1/standalone_attn_prefill_testing1_2048_nan_counter_collection.csv
+[m[0;31mE20250810 22:14:46.791945 140538561500928 output_stream.cpp:105] Opened result file: ./profiles/pmc_1/standalone_attn_prefill_testing1_2048_nan_agent_info.csv
+[m# ---- Run standalone_attn_prefill_testing1_2048_32 ----
+INFO 08-10 22:15:00 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 22:15:14.816938 140659217917696 output_stream.cpp:105] Opened result file: ./profiles/pmc_1/standalone_attn_prefill_testing1_2048_32_counter_collection.csv
+[m[0;31mE20250810 22:15:14.827384 140659217917696 output_stream.cpp:105] Opened result file: ./profiles/pmc_1/standalone_attn_prefill_testing1_2048_32_agent_info.csv
+[m[0;33mW20250810 22:15:24.866141 140659217917696 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_1_256_nan ----
+INFO 08-10 22:42:19 [__init__.py:244] Automatically detected platform rocm.
+No masking
+[0;31mE20250810 22:42:34.951137 140025328850688 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_256_nan_kernel_trace.csv
+[m[0;31mE20250810 22:42:34.957719 140025328850688 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_256_nan_agent_info.csv
+[m# ---- Run standalone_attn_prefill_tp8_1_256_32 ----
+INFO 08-10 22:42:49 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 22:43:03.696779 140352314492672 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_256_32_kernel_trace.csv
+[m[0;31mE20250810 22:43:03.704752 140352314492672 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_256_32_agent_info.csv
+[m[0;33mW20250810 22:43:12.965405 140352314492672 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_1_256_64 ----
+INFO 08-10 22:43:18 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 22:43:33.068308 140583052834560 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_256_64_kernel_trace.csv
+[m[0;31mE20250810 22:43:33.074682 140583052834560 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_256_64_agent_info.csv
+[m[0;33mW20250810 22:43:41.782020 140583052834560 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_1_256_96 ----
+INFO 08-10 22:43:47 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 22:44:01.778521 140551490225920 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_256_96_kernel_trace.csv
+[m[0;31mE20250810 22:44:01.785159 140551490225920 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_256_96_agent_info.csv
+[m[0;33mW20250810 22:44:10.346012 140551490225920 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_1_256_128 ----
+INFO 08-10 22:44:15 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 22:44:29.497183 140157160392448 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_256_128_kernel_trace.csv
+[m[0;31mE20250810 22:44:29.502966 140157160392448 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_256_128_agent_info.csv
+[m[0;33mW20250810 22:44:38.226346 140157160392448 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_1_256_160 ----
+INFO 08-10 22:44:43 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 22:44:57.622526 139923437311744 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_256_160_kernel_trace.csv
+[m[0;31mE20250810 22:44:57.630555 139923437311744 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_256_160_agent_info.csv
+[m[0;33mW20250810 22:45:06.735395 139923437311744 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_1_512_nan ----
+INFO 08-10 22:45:12 [__init__.py:244] Automatically detected platform rocm.
+No masking
+[0;31mE20250810 22:45:25.500985 139646271739648 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_512_nan_kernel_trace.csv
+[m[0;31mE20250810 22:45:25.507393 139646271739648 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_512_nan_agent_info.csv
+[m# ---- Run standalone_attn_prefill_tp8_1_512_32 ----
+INFO 08-10 22:45:39 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 22:45:52.734283 139748772185856 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_512_32_kernel_trace.csv
+[m[0;31mE20250810 22:45:52.740672 139748772185856 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_512_32_agent_info.csv
+[m[0;33mW20250810 22:46:01.557398 139748772185856 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_1_512_64 ----
+INFO 08-10 22:46:07 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 22:46:21.780269 139825538205440 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_512_64_kernel_trace.csv
+[m[0;31mE20250810 22:46:21.787263 139825538205440 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_512_64_agent_info.csv
+[m[0;33mW20250810 22:46:30.994418 139825538205440 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_1_512_96 ----
+INFO 08-10 22:46:37 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 22:46:51.477207 139638299834112 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_512_96_kernel_trace.csv
+[m[0;31mE20250810 22:46:51.483305 139638299834112 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_512_96_agent_info.csv
+[m[0;33mW20250810 22:47:00.403969 139638299834112 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_1_512_128 ----
+INFO 08-10 22:47:06 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 22:47:19.854535 139990550329088 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_512_128_kernel_trace.csv
+[m[0;31mE20250810 22:47:19.860721 139990550329088 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_512_128_agent_info.csv
+[m[0;33mW20250810 22:47:29.198027 139990550329088 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_1_512_160 ----
+INFO 08-10 22:47:35 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 22:47:50.234651 140417181800192 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_512_160_kernel_trace.csv
+[m[0;31mE20250810 22:47:50.240796 140417181800192 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_512_160_agent_info.csv
+[m[0;33mW20250810 22:47:58.908403 140417181800192 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_1_1024_nan ----
+INFO 08-10 22:48:04 [__init__.py:244] Automatically detected platform rocm.
+No masking
+[0;31mE20250810 22:48:18.896034 139659009050368 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_1024_nan_kernel_trace.csv
+[m[0;31mE20250810 22:48:18.901973 139659009050368 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_1024_nan_agent_info.csv
+[m# ---- Run standalone_attn_prefill_tp8_1_1024_32 ----
+INFO 08-10 22:48:35 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 22:48:49.189392 139642078525184 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_1024_32_kernel_trace.csv
+[m[0;31mE20250810 22:48:49.197259 139642078525184 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_1024_32_agent_info.csv
+[m[0;33mW20250810 22:48:58.108628 139642078525184 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_1_1024_64 ----
+INFO 08-10 22:49:03 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 22:49:16.407067 140238917830400 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_1024_64_kernel_trace.csv
+[m[0;31mE20250810 22:49:16.413361 140238917830400 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_1024_64_agent_info.csv
+[m[0;33mW20250810 22:49:25.401103 140238917830400 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_1_1024_96 ----
+INFO 08-10 22:49:30 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 22:49:43.938486 140506005755648 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_1024_96_kernel_trace.csv
+[m[0;31mE20250810 22:49:43.944407 140506005755648 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_1024_96_agent_info.csv
+[m[0;33mW20250810 22:49:52.434319 140506005755648 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_1_1024_128 ----
+INFO 08-10 22:49:57 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 22:50:11.321453 140183520777984 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_1024_128_kernel_trace.csv
+[m[0;31mE20250810 22:50:11.327651 140183520777984 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_1024_128_agent_info.csv
+[m[0;33mW20250810 22:50:20.367897 140183520777984 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_1_1024_160 ----
+INFO 08-10 22:50:25 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 22:50:38.785527 140111834031872 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_1024_160_kernel_trace.csv
+[m[0;31mE20250810 22:50:38.791569 140111834031872 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_1024_160_agent_info.csv
+[m[0;33mW20250810 22:50:47.670070 140111834031872 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_1_2048_nan ----
+INFO 08-10 22:50:52 [__init__.py:244] Automatically detected platform rocm.
+No masking
+[0;31mE20250810 22:51:06.281858 140392140801792 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_2048_nan_kernel_trace.csv
+[m[0;31mE20250810 22:51:06.287697 140392140801792 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_2048_nan_agent_info.csv
+[m# ---- Run standalone_attn_prefill_tp8_1_2048_32 ----
+INFO 08-10 22:51:20 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 22:51:34.995542 139826644137728 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_2048_32_kernel_trace.csv
+[m[0;31mE20250810 22:51:35.002788 139826644137728 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_2048_32_agent_info.csv
+[m[0;33mW20250810 22:51:43.887529 139826644137728 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_1_2048_64 ----
+INFO 08-10 22:51:48 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 22:52:03.160832 140450887911168 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_2048_64_kernel_trace.csv
+[m[0;31mE20250810 22:52:03.166896 140450887911168 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_2048_64_agent_info.csv
+[m[0;33mW20250810 22:52:12.291715 140450887911168 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_1_2048_96 ----
+INFO 08-10 22:52:17 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 22:52:30.455610 140374887499520 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_2048_96_kernel_trace.csv
+[m[0;31mE20250810 22:52:30.461899 140374887499520 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_2048_96_agent_info.csv
+[m[0;33mW20250810 22:52:39.166015 140374887499520 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_1_2048_128 ----
+INFO 08-10 22:52:44 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 22:52:57.613726 140553353647872 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_2048_128_kernel_trace.csv
+[m[0;31mE20250810 22:52:57.620078 140553353647872 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_2048_128_agent_info.csv
+[m[0;33mW20250810 22:53:06.942999 140553353647872 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_1_2048_160 ----
+INFO 08-10 22:53:12 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 22:53:26.368816 140238544455424 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_2048_160_kernel_trace.csv
+[m[0;31mE20250810 22:53:26.374955 140238544455424 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_2048_160_agent_info.csv
+[m[0;33mW20250810 22:53:34.962407 140238544455424 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_1_4096_nan ----
+INFO 08-10 22:53:40 [__init__.py:244] Automatically detected platform rocm.
+No masking
+[0;31mE20250810 22:53:53.241997 140577584338688 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_4096_nan_kernel_trace.csv
+[m[0;31mE20250810 22:53:53.248824 140577584338688 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_4096_nan_agent_info.csv
+[m# ---- Run standalone_attn_prefill_tp8_1_4096_32 ----
+INFO 08-10 22:54:06 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 22:54:20.188307 140289333729024 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_4096_32_kernel_trace.csv
+[m[0;31mE20250810 22:54:20.194399 140289333729024 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_4096_32_agent_info.csv
+[m[0;33mW20250810 22:54:29.220901 140289333729024 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_1_4096_64 ----
+INFO 08-10 22:54:34 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 22:54:47.592299 140549400012544 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_4096_64_kernel_trace.csv
+[m[0;31mE20250810 22:54:47.598734 140549400012544 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_4096_64_agent_info.csv
+[m[0;33mW20250810 22:54:56.448042 140549400012544 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_1_4096_96 ----
+INFO 08-10 22:55:01 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 22:55:14.841130 140326347650816 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_4096_96_kernel_trace.csv
+[m[0;31mE20250810 22:55:14.847607 140326347650816 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_4096_96_agent_info.csv
+[m[0;33mW20250810 22:55:23.666619 140326347650816 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_1_4096_128 ----
+INFO 08-10 22:55:28 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 22:55:42.542699 140042260346624 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_4096_128_kernel_trace.csv
+[m[0;31mE20250810 22:55:42.549052 140042260346624 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_4096_128_agent_info.csv
+[m[0;33mW20250810 22:55:51.022113 140042260346624 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_1_4096_160 ----
+INFO 08-10 22:55:56 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 22:56:12.316944 140092234520320 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_4096_160_kernel_trace.csv
+[m[0;31mE20250810 22:56:12.323997 140092234520320 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_4096_160_agent_info.csv
+[m[0;33mW20250810 22:56:21.371805 140092234520320 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_1_8192_nan ----
+INFO 08-10 22:56:27 [__init__.py:244] Automatically detected platform rocm.
+No masking
+[0;31mE20250810 22:56:42.266698 140334614480640 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_8192_nan_kernel_trace.csv
+[m[0;31mE20250810 22:56:42.272680 140334614480640 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_8192_nan_agent_info.csv
+[m# ---- Run standalone_attn_prefill_tp8_1_8192_32 ----
+INFO 08-10 22:56:56 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 22:57:10.969110 140563586123520 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_8192_32_kernel_trace.csv
+[m[0;31mE20250810 22:57:10.974884 140563586123520 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_8192_32_agent_info.csv
+[m[0;33mW20250810 22:57:19.373170 140563586123520 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_1_8192_64 ----
+INFO 08-10 22:57:25 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 22:57:40.089750 140668700067584 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_8192_64_kernel_trace.csv
+[m[0;31mE20250810 22:57:40.095975 140668700067584 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_8192_64_agent_info.csv
+[m[0;33mW20250810 22:57:48.632484 140668700067584 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_1_8192_96 ----
+INFO 08-10 22:57:53 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 22:58:06.796976 140681731999488 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_8192_96_kernel_trace.csv
+[m[0;31mE20250810 22:58:06.802789 140681731999488 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_8192_96_agent_info.csv
+[m[0;33mW20250810 22:58:15.296236 140681731999488 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_1_8192_128 ----
+INFO 08-10 22:58:20 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 22:58:33.401582 139774852675328 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_8192_128_kernel_trace.csv
+[m[0;31mE20250810 22:58:33.407461 139774852675328 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_8192_128_agent_info.csv
+[m[0;33mW20250810 22:58:41.758420 139774852675328 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_1_8192_160 ----
+INFO 08-10 22:58:46 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 22:58:59.481326 139885396018944 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_8192_160_kernel_trace.csv
+[m[0;31mE20250810 22:58:59.487511 139885396018944 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_1_8192_160_agent_info.csv
+[m[0;33mW20250810 22:59:08.077295 139885396018944 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_4_256_nan ----
+INFO 08-10 22:59:13 [__init__.py:244] Automatically detected platform rocm.
+No masking
+[0;31mE20250810 22:59:27.929247 140281108223744 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_256_nan_kernel_trace.csv
+[m[0;31mE20250810 22:59:27.935312 140281108223744 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_256_nan_agent_info.csv
+[m# ---- Run standalone_attn_prefill_tp8_4_256_32 ----
+INFO 08-10 22:59:42 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 22:59:56.617439 139844593194752 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_256_32_kernel_trace.csv
+[m[0;31mE20250810 22:59:56.623438 139844593194752 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_256_32_agent_info.csv
+[m[0;33mW20250810 23:00:05.231204 139844593194752 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_4_256_64 ----
+INFO 08-10 23:00:10 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:00:24.411216 140129681413888 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_256_64_kernel_trace.csv
+[m[0;31mE20250810 23:00:24.419033 140129681413888 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_256_64_agent_info.csv
+[m[0;33mW20250810 23:00:33.868387 140129681413888 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_4_256_96 ----
+INFO 08-10 23:00:39 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:00:54.743976 140238533437184 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_256_96_kernel_trace.csv
+[m[0;31mE20250810 23:00:54.750145 140238533437184 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_256_96_agent_info.csv
+[m[0;33mW20250810 23:01:03.235034 140238533437184 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_4_256_128 ----
+INFO 08-10 23:01:08 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:01:22.289590 139896896341760 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_256_128_kernel_trace.csv
+[m[0;31mE20250810 23:01:22.295833 139896896341760 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_256_128_agent_info.csv
+[m[0;33mW20250810 23:01:31.425820 139896896341760 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_4_256_160 ----
+INFO 08-10 23:01:36 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:01:50.470735 139882941413120 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_256_160_kernel_trace.csv
+[m[0;31mE20250810 23:01:50.476705 139882941413120 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_256_160_agent_info.csv
+[m[0;33mW20250810 23:01:59.266369 139882941413120 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_4_512_nan ----
+INFO 08-10 23:02:04 [__init__.py:244] Automatically detected platform rocm.
+No masking
+[0;31mE20250810 23:02:18.490693 140502854694656 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_512_nan_kernel_trace.csv
+[m[0;31mE20250810 23:02:18.496895 140502854694656 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_512_nan_agent_info.csv
+[m# ---- Run standalone_attn_prefill_tp8_4_512_32 ----
+INFO 08-10 23:02:32 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:02:46.935108 140181407688448 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_512_32_kernel_trace.csv
+[m[0;31mE20250810 23:02:46.942165 140181407688448 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_512_32_agent_info.csv
+[m[0;33mW20250810 23:02:56.108391 140181407688448 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_4_512_64 ----
+INFO 08-10 23:03:01 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:03:16.286533 139868033713920 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_512_64_kernel_trace.csv
+[m[0;31mE20250810 23:03:16.293539 139868033713920 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_512_64_agent_info.csv
+[m[0;33mW20250810 23:03:25.911013 139868033713920 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_4_512_96 ----
+INFO 08-10 23:03:31 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:03:44.314206 139808145540864 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_512_96_kernel_trace.csv
+[m[0;31mE20250810 23:03:44.320256 139808145540864 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_512_96_agent_info.csv
+[m[0;33mW20250810 23:03:52.936094 139808145540864 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_4_512_128 ----
+INFO 08-10 23:03:58 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:04:12.577919 140309520148224 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_512_128_kernel_trace.csv
+[m[0;31mE20250810 23:04:12.585364 140309520148224 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_512_128_agent_info.csv
+[m[0;33mW20250810 23:04:21.180517 140309520148224 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_4_512_160 ----
+INFO 08-10 23:04:27 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:04:40.499309 139927156987648 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_512_160_kernel_trace.csv
+[m[0;31mE20250810 23:04:40.506100 139927156987648 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_512_160_agent_info.csv
+[m[0;33mW20250810 23:04:49.717292 139927156987648 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_4_1024_nan ----
+INFO 08-10 23:04:55 [__init__.py:244] Automatically detected platform rocm.
+No masking
+[0;31mE20250810 23:05:08.660383 140170822326016 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_1024_nan_kernel_trace.csv
+[m[0;31mE20250810 23:05:08.666188 140170822326016 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_1024_nan_agent_info.csv
+[m# ---- Run standalone_attn_prefill_tp8_4_1024_32 ----
+INFO 08-10 23:05:22 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:05:35.732142 139749186250496 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_1024_32_kernel_trace.csv
+[m[0;31mE20250810 23:05:35.737928 139749186250496 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_1024_32_agent_info.csv
+[m[0;33mW20250810 23:05:44.273620 139749186250496 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_4_1024_64 ----
+INFO 08-10 23:05:49 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:06:03.099999 140655067240192 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_1024_64_kernel_trace.csv
+[m[0;31mE20250810 23:06:03.107537 140655067240192 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_1024_64_agent_info.csv
+[m[0;33mW20250810 23:06:12.383492 140655067240192 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_4_1024_96 ----
+INFO 08-10 23:06:17 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:06:31.632482 139967469405952 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_1024_96_kernel_trace.csv
+[m[0;31mE20250810 23:06:31.638318 139967469405952 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_1024_96_agent_info.csv
+[m[0;33mW20250810 23:06:40.115199 139967469405952 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_4_1024_128 ----
+INFO 08-10 23:06:45 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:06:59.414599 140615484868352 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_1024_128_kernel_trace.csv
+[m[0;31mE20250810 23:06:59.422406 140615484868352 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_1024_128_agent_info.csv
+[m[0;33mW20250810 23:07:08.670148 140615484868352 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_4_1024_160 ----
+INFO 08-10 23:07:14 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:07:29.442134 140221887194880 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_1024_160_kernel_trace.csv
+[m[0;31mE20250810 23:07:29.449169 140221887194880 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_1024_160_agent_info.csv
+[m[0;33mW20250810 23:07:38.795348 140221887194880 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_4_2048_nan ----
+INFO 08-10 23:07:44 [__init__.py:244] Automatically detected platform rocm.
+No masking
+[0;31mE20250810 23:07:58.130852 140261776606976 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_2048_nan_kernel_trace.csv
+[m[0;31mE20250810 23:07:58.137356 140261776606976 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_2048_nan_agent_info.csv
+[m# ---- Run standalone_attn_prefill_tp8_4_2048_32 ----
+INFO 08-10 23:08:11 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:08:25.077191 140312786831104 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_2048_32_kernel_trace.csv
+[m[0;31mE20250810 23:08:25.083980 140312786831104 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_2048_32_agent_info.csv
+[m[0;33mW20250810 23:08:34.327931 140312786831104 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_4_2048_64 ----
+INFO 08-10 23:08:40 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:08:54.681199 140397093496576 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_2048_64_kernel_trace.csv
+[m[0;31mE20250810 23:08:54.687226 140397093496576 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_2048_64_agent_info.csv
+[m[0;33mW20250810 23:09:03.324793 140397093496576 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_4_2048_96 ----
+INFO 08-10 23:09:08 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:09:22.591544 140195681912576 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_2048_96_kernel_trace.csv
+[m[0;31mE20250810 23:09:22.597738 140195681912576 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_2048_96_agent_info.csv
+[m[0;33mW20250810 23:09:31.352689 140195681912576 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_4_2048_128 ----
+INFO 08-10 23:09:37 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:09:51.817210 140167813936896 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_2048_128_kernel_trace.csv
+[m[0;31mE20250810 23:09:51.823185 140167813936896 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_2048_128_agent_info.csv
+[m[0;33mW20250810 23:10:00.725599 140167813936896 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_4_2048_160 ----
+INFO 08-10 23:10:06 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:10:20.923951 140258550703872 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_2048_160_kernel_trace.csv
+[m[0;31mE20250810 23:10:20.929973 140258550703872 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_2048_160_agent_info.csv
+[m[0;33mW20250810 23:10:29.348702 140258550703872 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_4_4096_nan ----
+INFO 08-10 23:10:34 [__init__.py:244] Automatically detected platform rocm.
+No masking
+[0;31mE20250810 23:10:47.501866 140018411579136 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_4096_nan_kernel_trace.csv
+[m[0;31mE20250810 23:10:47.508770 140018411579136 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_4096_nan_agent_info.csv
+[m# ---- Run standalone_attn_prefill_tp8_4_4096_32 ----
+INFO 08-10 23:11:01 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:11:14.580853 139731253085952 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_4096_32_kernel_trace.csv
+[m[0;31mE20250810 23:11:14.587678 139731253085952 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_4096_32_agent_info.csv
+[m[0;33mW20250810 23:11:23.296335 139731253085952 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_4_4096_64 ----
+INFO 08-10 23:11:28 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:11:42.088960 140693351008000 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_4096_64_kernel_trace.csv
+[m[0;31mE20250810 23:11:42.095431 140693351008000 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_4096_64_agent_info.csv
+[m[0;33mW20250810 23:11:51.011272 140693351008000 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_4_4096_96 ----
+INFO 08-10 23:11:55 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:12:08.829075 139631796836096 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_4096_96_kernel_trace.csv
+[m[0;31mE20250810 23:12:08.835393 139631796836096 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_4096_96_agent_info.csv
+[m[0;33mW20250810 23:12:17.262330 139631796836096 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_4_4096_128 ----
+INFO 08-10 23:12:22 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:12:35.592055 140357639030528 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_4096_128_kernel_trace.csv
+[m[0;31mE20250810 23:12:35.598339 140357639030528 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_4096_128_agent_info.csv
+[m[0;33mW20250810 23:12:43.988393 140357639030528 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_4_4096_160 ----
+INFO 08-10 23:12:49 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:13:04.421076 140449882945280 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_4096_160_kernel_trace.csv
+[m[0;31mE20250810 23:13:04.428387 140449882945280 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_4096_160_agent_info.csv
+[m[0;33mW20250810 23:13:13.444523 140449882945280 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_4_8192_nan ----
+INFO 08-10 23:13:19 [__init__.py:244] Automatically detected platform rocm.
+No masking
+[0;31mE20250810 23:13:33.278717 139866629388032 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_8192_nan_kernel_trace.csv
+[m[0;31mE20250810 23:13:33.284667 139866629388032 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_8192_nan_agent_info.csv
+[m# ---- Run standalone_attn_prefill_tp8_4_8192_32 ----
+INFO 08-10 23:13:47 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:14:01.241301 139808483329792 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_8192_32_kernel_trace.csv
+[m[0;31mE20250810 23:14:01.247771 139808483329792 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_8192_32_agent_info.csv
+[m[0;33mW20250810 23:14:10.754326 139808483329792 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_4_8192_64 ----
+INFO 08-10 23:14:17 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:14:32.122752 140279476537088 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_8192_64_kernel_trace.csv
+[m[0;31mE20250810 23:14:32.129641 140279476537088 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_8192_64_agent_info.csv
+[m[0;33mW20250810 23:14:40.786792 140279476537088 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_4_8192_96 ----
+INFO 08-10 23:14:46 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:15:01.414858 140323422287616 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_8192_96_kernel_trace.csv
+[m[0;31mE20250810 23:15:01.421815 140323422287616 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_8192_96_agent_info.csv
+[m[0;33mW20250810 23:15:11.101104 140323422287616 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_4_8192_128 ----
+INFO 08-10 23:15:17 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:15:32.745633 140402507818752 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_8192_128_kernel_trace.csv
+[m[0;31mE20250810 23:15:32.751712 140402507818752 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_8192_128_agent_info.csv
+[m[0;33mW20250810 23:15:41.177836 140402507818752 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_4_8192_160 ----
+INFO 08-10 23:15:46 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:16:00.057504 140331484337920 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_8192_160_kernel_trace.csv
+[m[0;31mE20250810 23:16:00.063513 140331484337920 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_4_8192_160_agent_info.csv
+[m[0;33mW20250810 23:16:08.917549 140331484337920 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_8_256_nan ----
+INFO 08-10 23:16:14 [__init__.py:244] Automatically detected platform rocm.
+No masking
+[0;31mE20250810 23:16:28.372868 140009733531392 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_256_nan_kernel_trace.csv
+[m[0;31mE20250810 23:16:28.379592 140009733531392 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_256_nan_agent_info.csv
+[m# ---- Run standalone_attn_prefill_tp8_8_256_32 ----
+INFO 08-10 23:16:42 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:16:57.050251 140654972405504 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_256_32_kernel_trace.csv
+[m[0;31mE20250810 23:16:57.056141 140654972405504 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_256_32_agent_info.csv
+[m[0;33mW20250810 23:17:05.441621 140654972405504 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_8_256_64 ----
+INFO 08-10 23:17:10 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:17:25.072947 140411595740928 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_256_64_kernel_trace.csv
+[m[0;31mE20250810 23:17:25.080379 140411595740928 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_256_64_agent_info.csv
+[m[0;33mW20250810 23:17:34.119026 140411595740928 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_8_256_96 ----
+INFO 08-10 23:17:40 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:17:53.848424 139941459949312 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_256_96_kernel_trace.csv
+[m[0;31mE20250810 23:17:53.854409 139941459949312 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_256_96_agent_info.csv
+[m[0;33mW20250810 23:18:02.918340 139941459949312 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_8_256_128 ----
+INFO 08-10 23:18:08 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:18:21.837006 140707077551872 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_256_128_kernel_trace.csv
+[m[0;31mE20250810 23:18:21.843889 140707077551872 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_256_128_agent_info.csv
+[m[0;33mW20250810 23:18:31.264042 140707077551872 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_8_256_160 ----
+INFO 08-10 23:18:37 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:18:51.227391 140395301529344 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_256_160_kernel_trace.csv
+[m[0;31mE20250810 23:18:51.234474 140395301529344 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_256_160_agent_info.csv
+[m[0;33mW20250810 23:19:00.237699 140395301529344 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_8_512_nan ----
+INFO 08-10 23:19:05 [__init__.py:244] Automatically detected platform rocm.
+No masking
+[0;31mE20250810 23:19:18.976490 140017279375104 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_512_nan_kernel_trace.csv
+[m[0;31mE20250810 23:19:18.982313 140017279375104 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_512_nan_agent_info.csv
+[m# ---- Run standalone_attn_prefill_tp8_8_512_32 ----
+INFO 08-10 23:19:32 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:19:46.123786 139949011826432 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_512_32_kernel_trace.csv
+[m[0;31mE20250810 23:19:46.130082 139949011826432 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_512_32_agent_info.csv
+[m[0;33mW20250810 23:19:54.699443 139949011826432 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_8_512_64 ----
+INFO 08-10 23:19:59 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:20:13.630384 139807750551296 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_512_64_kernel_trace.csv
+[m[0;31mE20250810 23:20:13.636923 139807750551296 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_512_64_agent_info.csv
+[m[0;33mW20250810 23:20:22.368964 139807750551296 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_8_512_96 ----
+INFO 08-10 23:20:27 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:20:41.094520 139948506793728 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_512_96_kernel_trace.csv
+[m[0;31mE20250810 23:20:41.101074 139948506793728 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_512_96_agent_info.csv
+[m[0;33mW20250810 23:20:49.729954 139948506793728 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_8_512_128 ----
+INFO 08-10 23:20:54 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:21:08.343399 139654236915456 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_512_128_kernel_trace.csv
+[m[0;31mE20250810 23:21:08.349774 139654236915456 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_512_128_agent_info.csv
+[m[0;33mW20250810 23:21:17.530890 139654236915456 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_8_512_160 ----
+INFO 08-10 23:21:23 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:21:37.567813 139675322443520 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_512_160_kernel_trace.csv
+[m[0;31mE20250810 23:21:37.574413 139675322443520 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_512_160_agent_info.csv
+[m[0;33mW20250810 23:21:45.866443 139675322443520 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_8_1024_nan ----
+INFO 08-10 23:21:51 [__init__.py:244] Automatically detected platform rocm.
+No masking
+[0;31mE20250810 23:22:04.642560 140367252723456 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_1024_nan_kernel_trace.csv
+[m[0;31mE20250810 23:22:04.648629 140367252723456 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_1024_nan_agent_info.csv
+[m# ---- Run standalone_attn_prefill_tp8_8_1024_32 ----
+INFO 08-10 23:22:18 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:22:32.060942 140033905223424 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_1024_32_kernel_trace.csv
+[m[0;31mE20250810 23:22:32.067066 140033905223424 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_1024_32_agent_info.csv
+[m[0;33mW20250810 23:22:40.622048 140033905223424 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_8_1024_64 ----
+INFO 08-10 23:22:46 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:23:00.557235 140003185035008 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_1024_64_kernel_trace.csv
+[m[0;31mE20250810 23:23:00.564614 140003185035008 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_1024_64_agent_info.csv
+[m[0;33mW20250810 23:23:10.484741 140003185035008 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_8_1024_96 ----
+INFO 08-10 23:23:16 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:23:30.471036 140163469510400 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_1024_96_kernel_trace.csv
+[m[0;31mE20250810 23:23:30.478351 140163469510400 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_1024_96_agent_info.csv
+[m[0;33mW20250810 23:23:40.084281 140163469510400 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_8_1024_128 ----
+INFO 08-10 23:23:45 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:23:59.550604 140675427378944 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_1024_128_kernel_trace.csv
+[m[0;31mE20250810 23:23:59.556932 140675427378944 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_1024_128_agent_info.csv
+[m[0;33mW20250810 23:24:08.955049 140675427378944 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_8_1024_160 ----
+INFO 08-10 23:24:14 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:24:29.154654 140552531375872 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_1024_160_kernel_trace.csv
+[m[0;31mE20250810 23:24:29.162371 140552531375872 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_1024_160_agent_info.csv
+[m[0;33mW20250810 23:24:38.230852 140552531375872 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_8_2048_nan ----
+INFO 08-10 23:24:44 [__init__.py:244] Automatically detected platform rocm.
+No masking
+[0;31mE20250810 23:24:59.476395 140591823623936 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_2048_nan_kernel_trace.csv
+[m[0;31mE20250810 23:24:59.482632 140591823623936 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_2048_nan_agent_info.csv
+[m# ---- Run standalone_attn_prefill_tp8_8_2048_32 ----
+INFO 08-10 23:25:13 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:25:29.202306 140132027913984 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_2048_32_kernel_trace.csv
+[m[0;31mE20250810 23:25:29.210079 140132027913984 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_2048_32_agent_info.csv
+[m[0;33mW20250810 23:25:38.257563 140132027913984 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_8_2048_64 ----
+INFO 08-10 23:25:43 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:25:57.229206 139642587879168 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_2048_64_kernel_trace.csv
+[m[0;31mE20250810 23:25:57.235547 139642587879168 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_2048_64_agent_info.csv
+[m[0;33mW20250810 23:26:05.975238 139642587879168 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_8_2048_96 ----
+INFO 08-10 23:26:11 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:26:24.229864 139833395578624 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_2048_96_kernel_trace.csv
+[m[0;31mE20250810 23:26:24.236665 139833395578624 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_2048_96_agent_info.csv
+[m[0;33mW20250810 23:26:32.981298 139833395578624 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_8_2048_128 ----
+INFO 08-10 23:26:38 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:26:51.045121 140262513047296 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_2048_128_kernel_trace.csv
+[m[0;31mE20250810 23:26:51.050782 140262513047296 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_2048_128_agent_info.csv
+[m[0;33mW20250810 23:26:59.402387 140262513047296 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_8_2048_160 ----
+INFO 08-10 23:27:04 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:27:17.496729 139959420196608 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_2048_160_kernel_trace.csv
+[m[0;31mE20250810 23:27:17.503515 139959420196608 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_2048_160_agent_info.csv
+[m[0;33mW20250810 23:27:26.323698 139959420196608 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_8_4096_nan ----
+INFO 08-10 23:27:31 [__init__.py:244] Automatically detected platform rocm.
+No masking
+[0;31mE20250810 23:27:44.696662 140197183682304 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_4096_nan_kernel_trace.csv
+[m[0;31mE20250810 23:27:44.702712 140197183682304 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_4096_nan_agent_info.csv
+[m# ---- Run standalone_attn_prefill_tp8_8_4096_32 ----
+INFO 08-10 23:27:58 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:28:11.855893 139689067775744 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_4096_32_kernel_trace.csv
+[m[0;31mE20250810 23:28:11.861876 139689067775744 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_4096_32_agent_info.csv
+[m[0;33mW20250810 23:28:20.810714 139689067775744 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_8_4096_64 ----
+INFO 08-10 23:28:25 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:28:40.430487 140024939251456 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_4096_64_kernel_trace.csv
+[m[0;31mE20250810 23:28:40.436893 140024939251456 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_4096_64_agent_info.csv
+[m[0;33mW20250810 23:28:49.474487 140024939251456 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_8_4096_96 ----
+INFO 08-10 23:28:54 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:29:07.768920 140332010768128 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_4096_96_kernel_trace.csv
+[m[0;31mE20250810 23:29:07.775107 140332010768128 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_4096_96_agent_info.csv
+[m[0;33mW20250810 23:29:16.459866 140332010768128 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_8_4096_128 ----
+INFO 08-10 23:29:21 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:29:35.562007 140062591055616 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_4096_128_kernel_trace.csv
+[m[0;31mE20250810 23:29:35.569875 140062591055616 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_4096_128_agent_info.csv
+[m[0;33mW20250810 23:29:45.638861 140062591055616 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_8_4096_160 ----
+INFO 08-10 23:29:51 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:30:05.142462 140032817825536 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_4096_160_kernel_trace.csv
+[m[0;31mE20250810 23:30:05.148504 140032817825536 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_4096_160_agent_info.csv
+[m[0;33mW20250810 23:30:14.265665 140032817825536 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_8_8192_nan ----
+INFO 08-10 23:30:20 [__init__.py:244] Automatically detected platform rocm.
+No masking
+[0;31mE20250810 23:30:33.882429 140212630746880 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_8192_nan_kernel_trace.csv
+[m[0;31mE20250810 23:30:33.888866 140212630746880 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_8192_nan_agent_info.csv
+[m# ---- Run standalone_attn_prefill_tp8_8_8192_32 ----
+INFO 08-10 23:30:48 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:31:01.356722 139722519086848 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_8192_32_kernel_trace.csv
+[m[0;31mE20250810 23:31:01.363807 139722519086848 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_8192_32_agent_info.csv
+[m[0;33mW20250810 23:31:10.673951 139722519086848 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_8_8192_64 ----
+INFO 08-10 23:31:15 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:31:29.097150 140184802604800 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_8192_64_kernel_trace.csv
+[m[0;31mE20250810 23:31:29.103229 140184802604800 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_8192_64_agent_info.csv
+[m[0;33mW20250810 23:31:37.813401 140184802604800 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_8_8192_96 ----
+INFO 08-10 23:31:42 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:31:56.077442 140653192652544 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_8192_96_kernel_trace.csv
+[m[0;31mE20250810 23:31:56.083732 140653192652544 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_8192_96_agent_info.csv
+[m[0;33mW20250810 23:32:04.664546 140653192652544 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_8_8192_128 ----
+INFO 08-10 23:32:09 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:32:23.409160 140085611386624 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_8192_128_kernel_trace.csv
+[m[0;31mE20250810 23:32:23.415411 140085611386624 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_8192_128_agent_info.csv
+[m[0;33mW20250810 23:32:32.200351 140085611386624 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_8_8192_160 ----
+INFO 08-10 23:32:37 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:32:50.465079 140073508026112 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_8192_160_kernel_trace.csv
+[m[0;31mE20250810 23:32:50.472044 140073508026112 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_8_8192_160_agent_info.csv
+[m[0;33mW20250810 23:32:59.321175 140073508026112 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_16_256_nan ----
+INFO 08-10 23:33:04 [__init__.py:244] Automatically detected platform rocm.
+No masking
+[0;31mE20250810 23:33:19.458165 140682038834944 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_256_nan_kernel_trace.csv
+[m[0;31mE20250810 23:33:19.464909 140682038834944 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_256_nan_agent_info.csv
+[m# ---- Run standalone_attn_prefill_tp8_16_256_32 ----
+INFO 08-10 23:33:33 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:33:46.429231 139869289596672 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_256_32_kernel_trace.csv
+[m[0;31mE20250810 23:33:46.435953 139869289596672 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_256_32_agent_info.csv
+[m[0;33mW20250810 23:33:55.042559 139869289596672 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_16_256_64 ----
+INFO 08-10 23:34:00 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:34:13.449892 140533017110272 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_256_64_kernel_trace.csv
+[m[0;31mE20250810 23:34:13.456533 140533017110272 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_256_64_agent_info.csv
+[m[0;33mW20250810 23:34:22.803384 140533017110272 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_16_256_96 ----
+INFO 08-10 23:34:28 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:34:41.246012 140180400690944 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_256_96_kernel_trace.csv
+[m[0;31mE20250810 23:34:41.251907 140180400690944 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_256_96_agent_info.csv
+[m[0;33mW20250810 23:34:50.087657 140180400690944 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_16_256_128 ----
+INFO 08-10 23:34:55 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:35:10.050352 140691876452096 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_256_128_kernel_trace.csv
+[m[0;31mE20250810 23:35:10.057588 140691876452096 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_256_128_agent_info.csv
+[m[0;33mW20250810 23:35:19.008672 140691876452096 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_16_256_160 ----
+INFO 08-10 23:35:25 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:35:39.317333 140550093141760 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_256_160_kernel_trace.csv
+[m[0;31mE20250810 23:35:39.324096 140550093141760 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_256_160_agent_info.csv
+[m[0;33mW20250810 23:35:48.315692 140550093141760 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_16_512_nan ----
+INFO 08-10 23:35:54 [__init__.py:244] Automatically detected platform rocm.
+No masking
+[0;31mE20250810 23:36:08.031462 140031631562496 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_512_nan_kernel_trace.csv
+[m[0;31mE20250810 23:36:08.037381 140031631562496 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_512_nan_agent_info.csv
+[m# ---- Run standalone_attn_prefill_tp8_16_512_32 ----
+INFO 08-10 23:36:22 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:36:36.815363 140567147316992 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_512_32_kernel_trace.csv
+[m[0;31mE20250810 23:36:36.821440 140567147316992 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_512_32_agent_info.csv
+[m[0;33mW20250810 23:36:45.369868 140567147316992 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_16_512_64 ----
+INFO 08-10 23:36:51 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:37:06.009973 139964915275520 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_512_64_kernel_trace.csv
+[m[0;31mE20250810 23:37:06.015800 139964915275520 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_512_64_agent_info.csv
+[m[0;33mW20250810 23:37:14.470908 139964915275520 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_16_512_96 ----
+INFO 08-10 23:37:19 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:37:33.451511 139889545291520 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_512_96_kernel_trace.csv
+[m[0;31mE20250810 23:37:33.457339 139889545291520 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_512_96_agent_info.csv
+[m[0;33mW20250810 23:37:42.348201 139889545291520 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_16_512_128 ----
+INFO 08-10 23:37:47 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:38:01.354768 140551668705024 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_512_128_kernel_trace.csv
+[m[0;31mE20250810 23:38:01.362245 140551668705024 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_512_128_agent_info.csv
+[m[0;33mW20250810 23:38:10.510150 140551668705024 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_16_512_160 ----
+INFO 08-10 23:38:16 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:38:30.045734 139972556891904 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_512_160_kernel_trace.csv
+[m[0;31mE20250810 23:38:30.051910 139972556891904 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_512_160_agent_info.csv
+[m[0;33mW20250810 23:38:38.741705 139972556891904 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_16_1024_nan ----
+INFO 08-10 23:38:43 [__init__.py:244] Automatically detected platform rocm.
+No masking
+[0;31mE20250810 23:38:57.624872 139747575969536 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_1024_nan_kernel_trace.csv
+[m[0;31mE20250810 23:38:57.631327 139747575969536 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_1024_nan_agent_info.csv
+[m# ---- Run standalone_attn_prefill_tp8_16_1024_32 ----
+INFO 08-10 23:39:11 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:39:25.074344 140561763825408 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_1024_32_kernel_trace.csv
+[m[0;31mE20250810 23:39:25.081242 140561763825408 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_1024_32_agent_info.csv
+[m[0;33mW20250810 23:39:34.139603 140561763825408 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_16_1024_64 ----
+INFO 08-10 23:39:39 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:39:52.647737 139628305893120 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_1024_64_kernel_trace.csv
+[m[0;31mE20250810 23:39:52.653883 139628305893120 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_1024_64_agent_info.csv
+[m[0;33mW20250810 23:40:01.526553 139628305893120 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_16_1024_96 ----
+INFO 08-10 23:40:06 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:40:19.544699 140322299893504 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_1024_96_kernel_trace.csv
+[m[0;31mE20250810 23:40:19.550985 140322299893504 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_1024_96_agent_info.csv
+[m[0;33mW20250810 23:40:28.390160 140322299893504 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_16_1024_128 ----
+INFO 08-10 23:40:33 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:40:46.476223 140682087638784 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_1024_128_kernel_trace.csv
+[m[0;31mE20250810 23:40:46.482332 140682087638784 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_1024_128_agent_info.csv
+[m[0;33mW20250810 23:40:55.244720 140682087638784 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_16_1024_160 ----
+INFO 08-10 23:41:00 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:41:13.493246 139697847662336 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_1024_160_kernel_trace.csv
+[m[0;31mE20250810 23:41:13.499577 139697847662336 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_1024_160_agent_info.csv
+[m[0;33mW20250810 23:41:22.201334 139697847662336 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_16_2048_nan ----
+INFO 08-10 23:41:26 [__init__.py:244] Automatically detected platform rocm.
+No masking
+[0;31mE20250810 23:41:39.623642 139672836278016 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_2048_nan_kernel_trace.csv
+[m[0;31mE20250810 23:41:39.630336 139672836278016 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_2048_nan_agent_info.csv
+[m# ---- Run standalone_attn_prefill_tp8_16_2048_32 ----
+INFO 08-10 23:41:53 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:42:06.234148 139842741380864 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_2048_32_kernel_trace.csv
+[m[0;31mE20250810 23:42:06.239685 139842741380864 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_2048_32_agent_info.csv
+[m[0;33mW20250810 23:42:15.443740 139842741380864 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_16_2048_64 ----
+INFO 08-10 23:42:20 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:42:33.551373 139721810777856 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_2048_64_kernel_trace.csv
+[m[0;31mE20250810 23:42:33.558076 139721810777856 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_2048_64_agent_info.csv
+[m[0;33mW20250810 23:42:42.341001 139721810777856 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_16_2048_96 ----
+INFO 08-10 23:42:47 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:43:00.139279 140518201120512 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_2048_96_kernel_trace.csv
+[m[0;31mE20250810 23:43:00.145555 140518201120512 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_2048_96_agent_info.csv
+[m[0;33mW20250810 23:43:08.723052 140518201120512 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_16_2048_128 ----
+INFO 08-10 23:43:13 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:43:26.860620 140342078129920 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_2048_128_kernel_trace.csv
+[m[0;31mE20250810 23:43:26.866627 140342078129920 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_2048_128_agent_info.csv
+[m[0;33mW20250810 23:43:36.007439 140342078129920 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_16_2048_160 ----
+INFO 08-10 23:43:41 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:43:54.702980 139957758019328 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_2048_160_kernel_trace.csv
+[m[0;31mE20250810 23:43:54.708905 139957758019328 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_2048_160_agent_info.csv
+[m[0;33mW20250810 23:44:03.180710 139957758019328 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_16_4096_nan ----
+INFO 08-10 23:44:08 [__init__.py:244] Automatically detected platform rocm.
+No masking
+[0;31mE20250810 23:44:21.832928 140591954732800 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_4096_nan_kernel_trace.csv
+[m[0;31mE20250810 23:44:21.838955 140591954732800 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_4096_nan_agent_info.csv
+[m# ---- Run standalone_attn_prefill_tp8_16_4096_32 ----
+INFO 08-10 23:44:35 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:44:49.505731 140141113177856 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_4096_32_kernel_trace.csv
+[m[0;31mE20250810 23:44:49.511759 140141113177856 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_4096_32_agent_info.csv
+[m[0;33mW20250810 23:44:58.206902 140141113177856 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_16_4096_64 ----
+INFO 08-10 23:45:02 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:45:16.622197 140582761518848 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_4096_64_kernel_trace.csv
+[m[0;31mE20250810 23:45:16.628265 140582761518848 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_4096_64_agent_info.csv
+[m[0;33mW20250810 23:45:25.572858 140582761518848 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_16_4096_96 ----
+INFO 08-10 23:45:31 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:45:45.172676 140184100644608 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_4096_96_kernel_trace.csv
+[m[0;31mE20250810 23:45:45.178824 140184100644608 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_4096_96_agent_info.csv
+[m[0;33mW20250810 23:45:53.753476 140184100644608 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_16_4096_128 ----
+INFO 08-10 23:45:58 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:46:12.459848 140046038755072 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_4096_128_kernel_trace.csv
+[m[0;31mE20250810 23:46:12.465933 140046038755072 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_4096_128_agent_info.csv
+[m[0;33mW20250810 23:46:20.869636 140046038755072 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_16_4096_160 ----
+INFO 08-10 23:46:25 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:46:39.611963 140665354938112 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_4096_160_kernel_trace.csv
+[m[0;31mE20250810 23:46:39.618205 140665354938112 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_4096_160_agent_info.csv
+[m[0;33mW20250810 23:46:48.783649 140665354938112 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_16_8192_nan ----
+INFO 08-10 23:46:53 [__init__.py:244] Automatically detected platform rocm.
+No masking
+[0;31mE20250810 23:47:07.431677 139756812302080 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_8192_nan_kernel_trace.csv
+[m[0;31mE20250810 23:47:07.437732 139756812302080 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_8192_nan_agent_info.csv
+[m# ---- Run standalone_attn_prefill_tp8_16_8192_32 ----
+INFO 08-10 23:47:21 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:47:34.895950 139752897152768 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_8192_32_kernel_trace.csv
+[m[0;31mE20250810 23:47:34.902440 139752897152768 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_8192_32_agent_info.csv
+[m[0;33mW20250810 23:47:43.259289 139752897152768 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_16_8192_64 ----
+INFO 08-10 23:47:48 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:48:02.363012 140540102317824 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_8192_64_kernel_trace.csv
+[m[0;31mE20250810 23:48:02.369833 140540102317824 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_8192_64_agent_info.csv
+[m[0;33mW20250810 23:48:11.151772 140540102317824 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_16_8192_96 ----
+INFO 08-10 23:48:16 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:48:30.890424 140318995113728 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_8192_96_kernel_trace.csv
+[m[0;31mE20250810 23:48:30.896583 140318995113728 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_8192_96_agent_info.csv
+[m[0;33mW20250810 23:48:39.346222 140318995113728 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_16_8192_128 ----
+INFO 08-10 23:48:44 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:48:59.414534 140508213475072 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_8192_128_kernel_trace.csv
+[m[0;31mE20250810 23:48:59.421073 140508213475072 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_8192_128_agent_info.csv
+[m[0;33mW20250810 23:49:08.541124 140508213475072 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_prefill_tp8_16_8192_160 ----
+INFO 08-10 23:49:13 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250810 23:49:27.886127 139996697081600 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_8192_160_kernel_trace.csv
+[m[0;31mE20250810 23:49:27.892161 139996697081600 output_stream.cpp:105] Opened result file: ./profiles/standalone_attn_prefill_tp8_16_8192_160_agent_info.csv
+[m[0;33mW20250810 23:49:36.483883 139996697081600 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
 [m

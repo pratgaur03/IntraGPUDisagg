@@ -65,7 +65,7 @@ def build_block_table(batch, seqlen, kv_block):
     return torch.arange(n_blocks, dtype=torch.int32,
                         device=DEVICE).expand(batch, n_blocks)
 def main():
-    global HEADS_Q, HEADS_KV 
+    # global HEADS_Q, HEADS_KV 
     parser = argparse.ArgumentParser(
         description="Unified-attention benchmark with optional CU masking"
     )
@@ -103,10 +103,10 @@ def main():
         print("No masking")
         prefill_stream = torch.cuda.Stream()
         decode_stream  = torch.cuda.Stream()
-    if args.tp !=1:
-        HEADS_Q   = int(cfg.num_attention_heads/args.tp)       # 8
-        HEADS_KV  = int(cfg.num_key_value_heads/args.tp) # 1
-        print("args.tp", args.tp)
+    # if args.tp !=1:
+    #     HEADS_Q   = int(cfg.num_attention_heads/args.tp)       # 8
+    #     HEADS_KV  = int(cfg.num_key_value_heads/args.tp) # 1
+    #     print("args.tp", args.tp)
 
 
     # ---- workload tensors ---------------------------------------------
