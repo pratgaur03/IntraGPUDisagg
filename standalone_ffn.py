@@ -2,11 +2,9 @@ import argparse, torch, torch.nn as nn, ctypes
 import argparse
 import math, torch, ctypes
 from transformers import AutoConfig
-# from vllm.attention.ops.triton_unified_attention import unified_attention
-from triton_unified_attention_2d import unified_attention
 import triton
 from triton.runtime.cache import get_cache_manager  
-
+from torch.cuda import nvtx
 hip = ctypes.CDLL("libamdhip64.so")
 DEVICE        = "cuda"          
 MODEL_ID      = "amd/Meta-Llama-3.1-70B-Instruct-FP8-KV"
@@ -15,20 +13,31 @@ MODEL_ID      = "amd/Meta-Llama-3.1-70B-Instruct-FP8-KV"
 cfg       = AutoConfig.from_pretrained(MODEL_ID)
 
 H = cfg.hidden_size        # 8192 
-I = cfg.intermediate_size  # 28k
+I = 3584
+# cfg.intermediate_size  # 28k
 
-gate_up = nn.Linear(H, 2*I, bias=False, device=DEVICE, dtype=torch.float16)
-down    = nn.Linear(2*I, H, bias=False, device=DEVICE, dtype=torch.float16)
+gate_up = nn.Linear(H, I, bias=False, device=DEVICE, dtype=torch.float16)
+down    = nn.Linear(I, H, bias=False, device=DEVICE, dtype=torch.float16)
+
 
 @torch.no_grad()
-def ffn_no_act(x):
-    y = gate_up(x)         # [N_tokens, 2I]
-    return down(y)         # [N_tokens, H]
+def ffn_down_only(A):
+    """
+    Simulate ONLY the down projection: y = A @ W_d
+    A: [M, I]  ->  y: [M, H]
+    """
+    assert A.dim() == 2 and A.size(1) == I, f"Expected [*, {I}] input to down proj; got {tuple(A.shape)}"
+    y = down(A)
+    assert y.size(0) == A.size(0) and y.size(1) == H, f"Down output shape mismatch: got {tuple(y.shape)}"
+    return y
+
 
 # ------------ helper -------------------------------------------------
-def build_tokens(batch, seqlen):
-    """Return a [batch*seqlen, H] tensor."""
-    return torch.randn(batch * seqlen, H, device=DEVICE, dtype=torch.float16)
+def build_activations(num_tokens):
+    """
+    Return a [num_tokens, I] tensor that stands in for the gated activation A.
+    """
+    return torch.randn(num_tokens, I, device=DEVICE, dtype=torch.float16)
 
 # ------------ (optional) CU-masked streams ---------------------------
 def int_to_maskarr(mask_int, words):
@@ -50,37 +59,41 @@ def stream_with_cu_mask(mask_bits):
 # ------------ CLI & benchmark loop -----------------------------------
 def main():
     ap = argparse.ArgumentParser("FFN prefill vs decode")
-    ap.add_argument("--prefill-batch", type=int, default=4)
-    ap.add_argument("--prefill-len",  type=int, default=4096)
-    ap.add_argument("--decode-batch", type=int, default=200)
+    ap.add_argument("--prefill-batch", type=int, default=1)
+    ap.add_argument("--prefill-len",  type=int, default=2048)
+    ap.add_argument("--decode-batch", type=int, default=10)
+    ap.add_argument("--decode-len", type=int, default=2048)
     ap.add_argument("--iters",        type=int, default=5)
     ap.add_argument("--masking",      action=argparse.BooleanOptionalAction, default=True)
-    ap.add_argument("--decode-mask",  type=int, default=96)
+    ap.add_argument("--decode-mask",  type=int, default=32)
     args = ap.parse_args()
 
     # Streams ----------------------------------------------------------
     if args.masking:
+        print("Using masking:",args.decode_mask)
         N_CU = 304
         decode_mask  = (1 << args.decode_mask) - 1
         prefill_mask = ((1 << N_CU) - 1) ^ decode_mask
         words = (N_CU + 31) // 32
-        decode_stream  = stream_with_cu_mask(int_to_maskarr(decode_mask,  words))
+        
         prefill_stream = stream_with_cu_mask(int_to_maskarr(prefill_mask, words))
+        decode_stream  = stream_with_cu_mask(int_to_maskarr(decode_mask,  words))
     else:
-        decode_stream, prefill_stream = torch.cuda.Stream(), torch.cuda.Stream()
+        prefill_stream,decode_stream = torch.cuda.Stream(), torch.cuda.Stream()
 
-    # Build token-major inputs once per iteration ----------------------
-    xs_prefill = [build_tokens(args.prefill_batch, args.prefill_len)  for _ in range(args.iters+1)]
-    xs_decode  = [build_tokens(args.decode_batch, 1)                 for _ in range(args.iters+1)]
+    M_prefill = args.prefill_batch * args.prefill_len     # tokens processed in prefill step
+    M_decode  = args.decode_batch                         # tokens processed in decode step (1 per sequence)
+
+    xs_prefill = [build_activations(M_prefill) for _ in range(args.iters + 1)]
+    xs_decode  = [build_activations(M_decode)  for _ in range(args.iters + 1)]
 
     # Warm-up + timed loop --------------------------------------------
     for i in range(1, args.iters+1):
-        with torch.cuda.stream(decode_stream):   # DECODE PHASE (1-token each)
-            _ = ffn_no_act(xs_decode[i])
-
         with torch.cuda.stream(prefill_stream):  # PREFILL PHASE (full ctx)
-            _ = ffn_no_act(xs_prefill[i])
-
+            _ = ffn_down_only(xs_prefill[i])
+           
+        with torch.cuda.stream(decode_stream):   # DECODE PHASE (1-token each)
+            _ = ffn_down_only(xs_decode[i])
         decode_stream.synchronize(); prefill_stream.synchronize()
 
 if __name__ == "__main__":
