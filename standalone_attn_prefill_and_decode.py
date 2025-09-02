@@ -153,6 +153,12 @@ def main():
 
     # ---------- warm-up + timed loop -----------------------------------
     for i in range(1, ITR+1):
+        with torch.cuda.stream(prefill_stream):   
+            unified_attention(q_prefills[i], k_prefills[i], v_prefills[i],
+                              out_prefill,
+                              cu_seqlens_prefill, args.prefill_len,
+                              seq_used_k_prefill, args.prefill_len,
+                              block_table=block_table_prefill, **common)
         
 
         with torch.cuda.stream(decode_stream):
@@ -162,12 +168,7 @@ def main():
                               seq_used_k_decode, args.decode_len,
                               block_table=block_table_decode, **common)
 
-        with torch.cuda.stream(prefill_stream):   
-            unified_attention(q_prefills[i], k_prefills[i], v_prefills[i],
-                              out_prefill,
-                              cu_seqlens_prefill, args.prefill_len,
-                              seq_used_k_prefill, args.prefill_len,
-                              block_table=block_table_prefill, **common)
+        
 
         prefill_stream.synchronize(); decode_stream.synchronize()
     # print("Mean of outputs:",

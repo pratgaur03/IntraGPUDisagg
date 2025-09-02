@@ -1,2 +1,2 @@
-pmc: FETCH_SIZE 
+pmc: WRITE_SIZE BANDWIDTH_EA
 gpu:0

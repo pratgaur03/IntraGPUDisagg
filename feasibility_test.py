@@ -6,14 +6,12 @@ import pandas as pd
 import numpy as np
 # ------------- user-tunable defaults -----------------------------------
 WORKLOADS = [
-    Path("standalone_attn_prefill_and_decode.py"),
+    Path("standalone_attn_prefill.py"),
 ]
-prefill_batch=[4, 8,16]
+prefill_batch=[1, 4, 8,16]
 prefill_len=[256,512,1024,2048,4096,8192]
-decode_batch=[1,2,4,8,16,32,64,128]
-decode_len=[256,512,1024,2048,4096,8192]
-cu_mask=[np.nan,32,64,96,128,160]
-LOG_FILE  = Path("rocprof_runs3.log")
+cu_mask=[np.nan,128]
+LOG_FILE  = Path("rocprof_runs0.log")
 # CSV_PATH  = Path("./attention_kernel.csv")
 # LOG_FILE  = Path("rocprof_runs_2d.log")
 # -----------------------------------------------------------------------
@@ -50,15 +48,11 @@ def main() -> None:
         # )
     for pb in prefill_batch:
         for pl in prefill_len:
-            for db in decode_batch:
-                for dl in decode_len:
                     for c in cu_mask:
 
                         wl_args = [
                             "--prefill-batch", str(pb),
                             "--prefill-len",   str(pl),
-                            "--decode-batch",  str(db),
-                            "--decode-len",    str(dl),
                             "--iters",         "5"
                         ]
                         if type(c)!=int:
@@ -68,8 +62,7 @@ def main() -> None:
                             wl_args += ["--decode-mask", str(c)]
 
                         tag = (
-                            f"tp8_"
-                            f"{pb}_{pl}_{db}_{dl}"
+                            f"write_size_{pb}_{pl}_"
                             f"{c}"
                         )
 
@@ -77,16 +70,23 @@ def main() -> None:
                             trace_name = f"{script.stem}_{tag}"
 
                             cmd = [
-                                "rocprofv3", "--kernel-trace",
-                                "-d", "./profiles",
+                                "rocprofv3",
+                                "-i", "/app/IntraGPUDisagg/metrics_1.txt",
+                                "-d", "./hwcount",
                                 "-o", trace_name,
                                 "--", "python3", str(script), *wl_args,
                             ]
+                            # cmd = [
+                            #     "rocprofv3", "--kernel-trace",
+                            #     "-d", "./profiles",
+                            #     "-o", trace_name,
+                            #     "--", "python3", str(script), *wl_args,
+                            # ]
 
                             # (Re-)create log file per run
                             # LOG_FILE.unlink(missing_ok=True)
 
-                            env = {**os.environ, "HIP_VISIBLE_DEVICES": "3"}
+                            env = {**os.environ, "HIP_VISIBLE_DEVICES": "0"}
 
                             with subprocess.Popen(
                                 cmd, env=env,

@@ -5,21 +5,15 @@ from pathlib import Path
 import pandas as pd
 import numpy as np
 # ------------- user-tunable defaults -----------------------------------
-# WORKLOADS = [
-#     Path("standalone_attn_prefill_3d.py"),
-#     Path("standalone_attn_decode_3d.py"),
-#     Path("standalone_attn_prefill_and_decode_3d.py"),
-# ]
-# CSV_PATH  = Path("./attention_kernel.csv")
-# LOG_FILE  = Path("rocprof_runs_2.log")
-
 WORKLOADS = [
-    Path("standalone_attn_prefill.py")
+    Path("standalone_attn_prefill.py"),
 ]
 prefill_batch=[1, 4, 8,16]
 prefill_len=[256,512,1024,2048,4096,8192]
-cu_mask=[np.nan,32,64,96,128,160]
-LOG_FILE  = Path("rocprof_runs2.log")
+cu_mask=[32,160]
+LOG_FILE  = Path("rocprof_runs1.log")
+# CSV_PATH  = Path("./attention_kernel.csv")
+# LOG_FILE  = Path("rocprof_runs_2d.log")
 # -----------------------------------------------------------------------
 
 
@@ -33,73 +27,83 @@ def build_wl_args(row) -> list[str]:
         "--iters",         "5",
        
     ]
-    if type(row["CU mask"])!=int:
+    if type(row["CU mask"])!=int or row["CU mask"]==np.nan or row["CU mask"]=="NA":
         args.append("--no-masking")
-        print("No masking")
     else:
         args += ["--decode-mask", str(int(row["CU mask"]))]
     return args
 
 
 def main() -> None:
-    for b in prefill_batch:
-        for l in prefill_len:
-            for c in cu_mask:
-                wl_args = [
-                    "--prefill-batch", str(b),
-                    "--prefill-len",   str(l),
-                    "--iters",         "5"
-                ]
-                if type(c)!=int:
-                    wl_args.append("--no-masking")
-                    print("No masking")
-                else:
-                    wl_args += ["--decode-mask", str(c)]
+    # df = pd.read_csv(CSV_PATH)
 
-                tag = (
-                    f"tp8_"
-                    f"{b}_{l}_"
-                    f"{c}"
-                )
+    # for idx, row in df.iterrows():
+        # wl_args = build_wl_args(row)
 
-                for script in WORKLOADS:
-                    trace_name = f"{script.stem}_{tag}"
+        # A tag that captures the parameter combo in a filename-safe way
+        # tag = (
+        #     f"{row['Prefill Batch']}_{row['Prefill Len']}_"
+        #     f"{row['Decode batch size']}_{row['Decode len']}_"
+        #     f"{row['CU mask']}_tp8_unified_attention_2d"
+        # )
+    for pb in prefill_batch:
+        for pl in prefill_len:
+                    for c in cu_mask:
 
-                    cmd = [
-                        "rocprofv3", "--kernel-trace",
-                        "-d", "./profiles",
-                        "-o", trace_name,
-                        "--", "python3", str(script), *wl_args,
-                    ]
-                    # cmd = [
-                    #     "rocprofv3", "-i", "metrics_1.txt",
-                    #     "-d", "./profiles",
-                    #     "-o", trace_name,
-                    #     "--", "python3", str(script), *wl_args,
-                    # ]
-                    
+                        wl_args = [
+                            "--prefill-batch", str(pb),
+                            "--prefill-len",   str(pl),
+                            "--iters",         "5"
+                        ]
+                        if type(c)!=int:
+                            wl_args.append("--no-masking")
+                            print("No masking")
+                        else:
+                            wl_args += ["--decode-mask", str(c)]
 
-                    # (Re-)create log file per run
-                    # LOG_FILE.unlink(missing_ok=True)
-
-                    env = {**os.environ, "HIP_VISIBLE_DEVICES": "1"}
-
-                    with subprocess.Popen(
-                        cmd, env=env,
-                        stdout=subprocess.PIPE,
-                        stderr=subprocess.STDOUT,
-                        text=True
-                    ) as p, open(LOG_FILE, "a") as log:
-                        log.write(f"# ---- Run {trace_name} ----\n")
-                        for line in p.stdout:
-                            log.write(line)
-                        p.wait()
-
-                    if p.returncode not in (0, -11, 139):
-                        print(
-                            f"[!] Unexpected exit code {p.returncode} "
-                            f"on {script.name} continuing"
+                        tag = (
+                            f"write_size_{pb}_{pl}_"
+                            f"{c}"
                         )
+
+                        for script in WORKLOADS:
+                            trace_name = f"{script.stem}_{tag}"
+
+                            cmd = [
+                                "rocprofv3",
+                                "-i", "/app/IntraGPUDisagg/metrics_2.txt",
+                                "-d", "./hwcount",
+                                "-o", trace_name,
+                                "--", "python3", str(script), *wl_args,
+                            ]
+                            # cmd = [
+                            #     "rocprofv3", "--kernel-trace",
+                            #     "-d", "./profiles",
+                            #     "-o", trace_name,
+                            #     "--", "python3", str(script), *wl_args,
+                            # ]
+
+                            # (Re-)create log file per run
+                            # LOG_FILE.unlink(missing_ok=True)
+
+                            env = {**os.environ, "HIP_VISIBLE_DEVICES": "1"}
+
+                            with subprocess.Popen(
+                                cmd, env=env,
+                                stdout=subprocess.PIPE,
+                                stderr=subprocess.STDOUT,
+                                text=True
+                            ) as p, open(LOG_FILE, "a") as log:
+                                log.write(f"# ---- Run {trace_name} ----\n")
+                                for line in p.stdout:
+                                    log.write(line)
+                                p.wait()
+
+                            if p.returncode not in (0, -11, 139):
+                                print(
+                                    f"[!] Unexpected exit code {p.returncode} "
+                                    f"on {script.name}  continuing"
+                                )
 
 
 if __name__ == "__main__":

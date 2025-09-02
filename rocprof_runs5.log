@@ -1,0 +1,495 @@
+# ---- Run standalone_attn_decode_fetch_size_1_25664 ----
+INFO 09-02 06:40:22 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:40:41.724088 140369843713792 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_1_25664_counter_collection.csv
+[m[0;31mE20250902 06:40:41.733860 140369843713792 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_1_25664_agent_info.csv
+[m[0;33mW20250902 06:40:51.873002 140369843713792 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[mFatal error: Command '['python3', 'standalone_attn_decode.py', '--decode-batch', '1', '--decode-len', '256', '--iters', '5', '--decode-mask', '64']' died with <Signals.SIGSEGV: 11>.
+
+# ---- Run standalone_attn_decode_fetch_size_1_51264 ----
+INFO 09-02 06:40:57 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:41:19.499854 140512073922304 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_1_51264_counter_collection.csv
+[m[0;31mE20250902 06:41:19.508175 140512073922304 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_1_51264_agent_info.csv
+[m[0;33mW20250902 06:41:27.762563 140512073922304 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[mFatal error: Command '['python3', 'standalone_attn_decode.py', '--decode-batch', '1', '--decode-len', '512', '--iters', '5', '--decode-mask', '64']' died with <Signals.SIGSEGV: 11>.
+
+# ---- Run standalone_attn_decode_fetch_size_1_256_64 ----
+INFO 09-02 06:43:46 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:44:02.320452 139899833231104 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_1_256_64_counter_collection.csv
+[m[0;31mE20250902 06:44:02.328148 139899833231104 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_1_256_64_agent_info.csv
+[m[0;33mW20250902 06:44:11.119048 139899833231104 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_1_512_64 ----
+INFO 09-02 06:44:16 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:44:32.490904 140148064552704 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_1_512_64_counter_collection.csv
+[m[0;31mE20250902 06:44:32.498801 140148064552704 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_1_512_64_agent_info.csv
+[m[0;33mW20250902 06:44:41.793518 140148064552704 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_1_1024_64 ----
+INFO 09-02 06:44:47 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:45:03.392395 139637498910464 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_1_1024_64_counter_collection.csv
+[m[0;31mE20250902 06:45:03.400191 139637498910464 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_1_1024_64_agent_info.csv
+[m[0;33mW20250902 06:45:12.404376 139637498910464 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_1_2048_64 ----
+INFO 09-02 06:45:18 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:45:34.843394 140274148579072 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_1_2048_64_counter_collection.csv
+[m[0;31mE20250902 06:45:34.851304 140274148579072 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_1_2048_64_agent_info.csv
+[m[0;33mW20250902 06:45:43.599137 140274148579072 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_1_4096_64 ----
+INFO 09-02 06:45:49 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:46:05.150030 139887900079872 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_1_4096_64_counter_collection.csv
+[m[0;31mE20250902 06:46:05.158022 139887900079872 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_1_4096_64_agent_info.csv
+[m[0;33mW20250902 06:46:13.742135 139887900079872 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_1_8192_64 ----
+INFO 09-02 06:46:19 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:46:36.223366 140267435828992 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_1_8192_64_counter_collection.csv
+[m[0;31mE20250902 06:46:36.233091 140267435828992 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_1_8192_64_agent_info.csv
+[m[0;33mW20250902 06:46:45.825160 140267435828992 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_2_256_64 ----
+INFO 09-02 06:46:52 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:47:12.000654 140013989578496 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_2_256_64_counter_collection.csv
+[m[0;31mE20250902 06:47:12.008991 140013989578496 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_2_256_64_agent_info.csv
+[m[0;33mW20250902 06:47:21.315415 140013989578496 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_2_512_64 ----
+INFO 09-02 06:47:28 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:47:45.883728 140209401804544 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_2_512_64_counter_collection.csv
+[m[0;31mE20250902 06:47:45.892091 140209401804544 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_2_512_64_agent_info.csv
+[m[0;33mW20250902 06:47:54.902927 140209401804544 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_2_1024_64 ----
+INFO 09-02 06:48:00 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:48:17.051366 140226969089792 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_2_1024_64_counter_collection.csv
+[m[0;31mE20250902 06:48:17.059171 140226969089792 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_2_1024_64_agent_info.csv
+[m[0;33mW20250902 06:48:25.760101 140226969089792 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_2_2048_64 ----
+INFO 09-02 06:48:30 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:48:47.058116 140197176956672 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_2_2048_64_counter_collection.csv
+[m[0;31mE20250902 06:48:47.066897 140197176956672 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_2_2048_64_agent_info.csv
+[m[0;33mW20250902 06:48:55.961794 140197176956672 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_2_4096_64 ----
+INFO 09-02 06:49:01 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:49:17.624958 139878802261760 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_2_4096_64_counter_collection.csv
+[m[0;31mE20250902 06:49:17.633194 139878802261760 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_2_4096_64_agent_info.csv
+[m[0;33mW20250902 06:49:26.925797 139878802261760 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_2_8192_64 ----
+INFO 09-02 06:49:32 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:49:49.967968 139961204672256 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_2_8192_64_counter_collection.csv
+[m[0;31mE20250902 06:49:49.976296 139961204672256 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_2_8192_64_agent_info.csv
+[m[0;33mW20250902 06:49:59.000822 139961204672256 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_4_256_64 ----
+INFO 09-02 06:50:04 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:50:21.597318 140618131965696 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_4_256_64_counter_collection.csv
+[m[0;31mE20250902 06:50:21.605521 140618131965696 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_4_256_64_agent_info.csv
+[m[0;33mW20250902 06:50:30.380423 140618131965696 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_4_512_64 ----
+INFO 09-02 06:50:36 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:50:52.254594 139629982766848 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_4_512_64_counter_collection.csv
+[m[0;31mE20250902 06:50:52.262744 139629982766848 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_4_512_64_agent_info.csv
+[m[0;33mW20250902 06:51:01.389055 139629982766848 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_4_1024_64 ----
+INFO 09-02 06:51:06 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:51:23.321070 140712032732928 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_4_1024_64_counter_collection.csv
+[m[0;31mE20250902 06:51:23.329358 140712032732928 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_4_1024_64_agent_info.csv
+[m[0;33mW20250902 06:51:32.358159 140712032732928 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_4_2048_64 ----
+INFO 09-02 06:51:38 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:51:56.447967 140170171049728 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_4_2048_64_counter_collection.csv
+[m[0;31mE20250902 06:51:56.457713 140170171049728 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_4_2048_64_agent_info.csv
+[m[0;33mW20250902 06:52:05.589144 140170171049728 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_4_4096_64 ----
+INFO 09-02 06:52:11 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:52:28.443994 139984247539456 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_4_4096_64_counter_collection.csv
+[m[0;31mE20250902 06:52:28.452401 139984247539456 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_4_4096_64_agent_info.csv
+[m[0;33mW20250902 06:52:37.903887 139984247539456 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_4_8192_64 ----
+INFO 09-02 06:52:43 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:52:59.947571 139944892544768 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_4_8192_64_counter_collection.csv
+[m[0;31mE20250902 06:52:59.956629 139944892544768 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_4_8192_64_agent_info.csv
+[m[0;33mW20250902 06:53:08.694944 139944892544768 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_8_256_64 ----
+INFO 09-02 06:53:14 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:53:30.561151 139928239752960 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_8_256_64_counter_collection.csv
+[m[0;31mE20250902 06:53:30.570168 139928239752960 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_8_256_64_agent_info.csv
+[m[0;33mW20250902 06:53:39.209153 139928239752960 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_8_512_64 ----
+INFO 09-02 06:53:44 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:54:01.776252 140233812678400 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_8_512_64_counter_collection.csv
+[m[0;31mE20250902 06:54:01.784772 140233812678400 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_8_512_64_agent_info.csv
+[m[0;33mW20250902 06:54:10.999759 140233812678400 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_8_1024_64 ----
+INFO 09-02 06:54:16 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:54:33.752280 139835015628544 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_8_1024_64_counter_collection.csv
+[m[0;31mE20250902 06:54:33.760867 139835015628544 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_8_1024_64_agent_info.csv
+[m[0;33mW20250902 06:54:42.267356 139835015628544 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_8_2048_64 ----
+INFO 09-02 06:54:48 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:55:04.714449 140498387515136 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_8_2048_64_counter_collection.csv
+[m[0;31mE20250902 06:55:04.722817 140498387515136 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_8_2048_64_agent_info.csv
+[m[0;33mW20250902 06:55:13.462576 140498387515136 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_8_4096_64 ----
+INFO 09-02 06:55:19 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:55:35.792280 140448601712384 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_8_4096_64_counter_collection.csv
+[m[0;31mE20250902 06:55:35.800707 140448601712384 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_8_4096_64_agent_info.csv
+[m[0;33mW20250902 06:55:44.499711 140448601712384 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_8_8192_64 ----
+INFO 09-02 06:55:50 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:56:06.631859 140030793639680 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_8_8192_64_counter_collection.csv
+[m[0;31mE20250902 06:56:06.640283 140030793639680 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_8_8192_64_agent_info.csv
+[m[0;33mW20250902 06:56:15.489581 140030793639680 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_16_256_64 ----
+INFO 09-02 06:56:21 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:56:38.276884 140062839097088 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_16_256_64_counter_collection.csv
+[m[0;31mE20250902 06:56:38.285313 140062839097088 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_16_256_64_agent_info.csv
+[m[0;33mW20250902 06:56:47.217708 140062839097088 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_16_512_64 ----
+INFO 09-02 06:56:53 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:57:10.201223 140270574040832 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_16_512_64_counter_collection.csv
+[m[0;31mE20250902 06:57:10.209360 140270574040832 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_16_512_64_agent_info.csv
+[m[0;33mW20250902 06:57:19.211509 140270574040832 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_16_1024_64 ----
+INFO 09-02 06:57:25 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:57:44.276943 139780692576000 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_16_1024_64_counter_collection.csv
+[m[0;31mE20250902 06:57:44.286507 139780692576000 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_16_1024_64_agent_info.csv
+[m[0;33mW20250902 06:57:53.642397 139780692576000 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_16_2048_64 ----
+INFO 09-02 06:58:01 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:58:18.638119 140038976009984 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_16_2048_64_counter_collection.csv
+[m[0;31mE20250902 06:58:18.646409 140038976009984 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_16_2048_64_agent_info.csv
+[m[0;33mW20250902 06:58:27.690142 140038976009984 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_16_4096_64 ----
+INFO 09-02 06:58:33 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:58:49.440976 140206520620800 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_16_4096_64_counter_collection.csv
+[m[0;31mE20250902 06:58:49.448703 140206520620800 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_16_4096_64_agent_info.csv
+[m[0;33mW20250902 06:58:58.507384 140206520620800 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_16_8192_64 ----
+INFO 09-02 06:59:04 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:59:20.744814 140681553323776 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_16_8192_64_counter_collection.csv
+[m[0;31mE20250902 06:59:20.753578 140681553323776 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_16_8192_64_agent_info.csv
+[m[0;33mW20250902 06:59:29.780603 140681553323776 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_32_256_64 ----
+INFO 09-02 06:59:35 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 06:59:52.452615 140125388371712 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_32_256_64_counter_collection.csv
+[m[0;31mE20250902 06:59:52.460503 140125388371712 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_32_256_64_agent_info.csv
+[m[0;33mW20250902 07:00:01.235978 140125388371712 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_32_512_64 ----
+INFO 09-02 07:00:06 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:00:24.755073 139758732764928 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_32_512_64_counter_collection.csv
+[m[0;31mE20250902 07:00:24.762948 139758732764928 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_32_512_64_agent_info.csv
+[m[0;33mW20250902 07:00:33.655077 139758732764928 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_32_1024_64 ----
+INFO 09-02 07:00:40 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:00:58.209138 139781374011136 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_32_1024_64_counter_collection.csv
+[m[0;31mE20250902 07:00:58.217217 139781374011136 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_32_1024_64_agent_info.csv
+[m[0;33mW20250902 07:01:07.715087 139781374011136 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_32_2048_64 ----
+INFO 09-02 07:01:14 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:01:32.865993 140270689347328 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_32_2048_64_counter_collection.csv
+[m[0;31mE20250902 07:01:32.876356 140270689347328 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_32_2048_64_agent_info.csv
+[m[0;33mW20250902 07:01:42.232278 140270689347328 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_32_4096_64 ----
+INFO 09-02 07:01:49 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:02:08.700584 140314854143744 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_32_4096_64_counter_collection.csv
+[m[0;31mE20250902 07:02:08.710484 140314854143744 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_32_4096_64_agent_info.csv
+[m[0;33mW20250902 07:02:17.922960 140314854143744 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_32_8192_64 ----
+INFO 09-02 07:02:24 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:02:44.275965 140339787302656 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_32_8192_64_counter_collection.csv
+[m[0;31mE20250902 07:02:44.285604 140339787302656 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_32_8192_64_agent_info.csv
+[m[0;33mW20250902 07:02:53.538710 140339787302656 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_64_256_64 ----
+INFO 09-02 07:03:00 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:03:24.386152 140347858859776 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_64_256_64_counter_collection.csv
+[m[0;31mE20250902 07:03:24.395914 140347858859776 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_64_256_64_agent_info.csv
+[m[0;33mW20250902 07:03:33.941437 140347858859776 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_64_512_64 ----
+INFO 09-02 07:03:44 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:04:07.199576 139712708450048 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_64_512_64_counter_collection.csv
+[m[0;31mE20250902 07:04:07.209792 139712708450048 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_64_512_64_agent_info.csv
+[m[0;33mW20250902 07:04:16.647416 139712708450048 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_64_1024_64 ----
+INFO 09-02 07:04:23 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:04:44.890580 139933610956544 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_64_1024_64_counter_collection.csv
+[m[0;31mE20250902 07:04:44.900427 139933610956544 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_64_1024_64_agent_info.csv
+[m[0;33mW20250902 07:04:54.666428 139933610956544 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_64_2048_64 ----
+INFO 09-02 07:05:01 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:05:21.637854 139903192696576 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_64_2048_64_counter_collection.csv
+[m[0;31mE20250902 07:05:21.648234 139903192696576 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_64_2048_64_agent_info.csv
+[m[0;33mW20250902 07:05:31.072154 139903192696576 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_64_4096_64 ----
+INFO 09-02 07:05:38 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:06:01.022492 139960369940224 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_64_4096_64_counter_collection.csv
+[m[0;31mE20250902 07:06:01.033219 139960369940224 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_64_4096_64_agent_info.csv
+[m[0;33mW20250902 07:06:10.184343 139960369940224 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_64_8192_64 ----
+INFO 09-02 07:06:19 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:06:41.533609 140231656421120 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_64_8192_64_counter_collection.csv
+[m[0;31mE20250902 07:06:41.543601 140231656421120 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_64_8192_64_agent_info.csv
+[m[0;33mW20250902 07:06:50.825389 140231656421120 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_128_256_64 ----
+INFO 09-02 07:06:58 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:07:16.907696 139629530015488 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_128_256_64_counter_collection.csv
+[m[0;31mE20250902 07:07:16.917003 139629530015488 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_128_256_64_agent_info.csv
+[m[0;33mW20250902 07:07:26.329126 139629530015488 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_128_512_64 ----
+INFO 09-02 07:07:33 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:07:52.469455 140244981298944 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_128_512_64_counter_collection.csv
+[m[0;31mE20250902 07:07:52.479271 140244981298944 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_128_512_64_agent_info.csv
+[m[0;33mW20250902 07:08:01.789741 140244981298944 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_128_1024_64 ----
+INFO 09-02 07:08:08 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:08:28.080442 139778137720576 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_128_1024_64_counter_collection.csv
+[m[0;31mE20250902 07:08:28.089880 139778137720576 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_128_1024_64_agent_info.csv
+[m[0;33mW20250902 07:08:37.591788 139778137720576 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_128_2048_64 ----
+INFO 09-02 07:08:45 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:09:04.722309 140076822021888 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_128_2048_64_counter_collection.csv
+[m[0;31mE20250902 07:09:04.732616 140076822021888 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_128_2048_64_agent_info.csv
+[m[0;33mW20250902 07:09:14.641923 140076822021888 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_128_4096_64 ----
+INFO 09-02 07:09:21 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:09:42.264831 139975572600576 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_128_4096_64_counter_collection.csv
+[m[0;31mE20250902 07:09:42.275957 139975572600576 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_128_4096_64_agent_info.csv
+[m[0;33mW20250902 07:09:52.224717 139975572600576 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_fetch_size_128_8192_64 ----
+INFO 09-02 07:10:02 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:10:23.107682 140622294841088 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_128_8192_64_counter_collection.csv
+[m[0;31mE20250902 07:10:23.117374 140622294841088 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_fetch_size_128_8192_64_agent_info.csv
+[m[0;33mW20250902 07:10:32.464843 140622294841088 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_1_256_64 ----
+INFO 09-02 07:13:21 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:13:43.065718 140143524456192 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_1_256_64_counter_collection.csv
+[m[0;31mE20250902 07:13:43.075254 140143524456192 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_1_256_64_agent_info.csv
+[m[0;33mW20250902 07:13:53.399246 140143524456192 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_1_512_64 ----
+INFO 09-02 07:14:00 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:14:23.276687 139910899541760 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_1_512_64_counter_collection.csv
+[m[0;31mE20250902 07:14:23.288118 139910899541760 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_1_512_64_agent_info.csv
+[m[0;33mW20250902 07:14:33.353520 139910899541760 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_1_1024_64 ----
+INFO 09-02 07:14:43 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:15:04.936073 140328988145408 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_1_1024_64_counter_collection.csv
+[m[0;31mE20250902 07:15:04.945983 140328988145408 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_1_1024_64_agent_info.csv
+[m[0;33mW20250902 07:15:14.700887 140328988145408 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_1_2048_64 ----
+INFO 09-02 07:15:21 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:15:45.425199 139830578370304 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_1_2048_64_counter_collection.csv
+[m[0;31mE20250902 07:15:45.435235 139830578370304 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_1_2048_64_agent_info.csv
+[m[0;33mW20250902 07:15:54.297060 139830578370304 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_1_4096_64 ----
+INFO 09-02 07:16:03 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:16:26.546723 140082350524160 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_1_4096_64_counter_collection.csv
+[m[0;31mE20250902 07:16:26.556759 140082350524160 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_1_4096_64_agent_info.csv
+[m[0;33mW20250902 07:16:36.048144 140082350524160 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_1_8192_64 ----
+INFO 09-02 07:16:45 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:17:09.040902 139977775048448 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_1_8192_64_counter_collection.csv
+[m[0;31mE20250902 07:17:09.051126 139977775048448 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_1_8192_64_agent_info.csv
+[m[0;33mW20250902 07:17:18.234385 139977775048448 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_2_256_64 ----
+INFO 09-02 07:17:27 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:17:51.011580 139828350924544 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_2_256_64_counter_collection.csv
+[m[0;31mE20250902 07:17:51.021027 139828350924544 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_2_256_64_agent_info.csv
+[m[0;33mW20250902 07:18:00.938550 139828350924544 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_2_512_64 ----
+INFO 09-02 07:18:09 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:18:31.516636 140671060797184 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_2_512_64_counter_collection.csv
+[m[0;31mE20250902 07:18:31.526062 140671060797184 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_2_512_64_agent_info.csv
+[m[0;33mW20250902 07:18:41.112247 140671060797184 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_2_1024_64 ----
+INFO 09-02 07:18:50 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:19:13.080400 139886644217600 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_2_1024_64_counter_collection.csv
+[m[0;31mE20250902 07:19:13.090711 139886644217600 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_2_1024_64_agent_info.csv
+[m[0;33mW20250902 07:19:22.737476 139886644217600 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_2_2048_64 ----
+INFO 09-02 07:19:31 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:19:53.065808 139649423128320 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_2_2048_64_counter_collection.csv
+[m[0;31mE20250902 07:19:53.075746 139649423128320 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_2_2048_64_agent_info.csv
+[m[0;33mW20250902 07:20:02.697181 139649423128320 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_2_4096_64 ----
+INFO 09-02 07:20:09 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:20:29.388320 140190586115840 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_2_4096_64_counter_collection.csv
+[m[0;31mE20250902 07:20:29.397852 140190586115840 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_2_4096_64_agent_info.csv
+[m[0;33mW20250902 07:20:38.769518 140190586115840 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_2_8192_64 ----
+INFO 09-02 07:20:45 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:21:05.677055 140652446390016 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_2_8192_64_counter_collection.csv
+[m[0;31mE20250902 07:21:05.686406 140652446390016 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_2_8192_64_agent_info.csv
+[m[0;33mW20250902 07:21:15.334990 140652446390016 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_4_256_64 ----
+INFO 09-02 07:21:22 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:21:43.216804 140660946659072 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_4_256_64_counter_collection.csv
+[m[0;31mE20250902 07:21:43.226085 140660946659072 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_4_256_64_agent_info.csv
+[m[0;33mW20250902 07:21:52.598567 140660946659072 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_4_512_64 ----
+INFO 09-02 07:22:00 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:22:20.284060 140123020203776 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_4_512_64_counter_collection.csv
+[m[0;31mE20250902 07:22:20.293625 140123020203776 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_4_512_64_agent_info.csv
+[m[0;33mW20250902 07:22:30.181707 140123020203776 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_4_1024_64 ----
+INFO 09-02 07:22:37 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:22:57.581988 139740009699072 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_4_1024_64_counter_collection.csv
+[m[0;31mE20250902 07:22:57.591507 139740009699072 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_4_1024_64_agent_info.csv
+[m[0;33mW20250902 07:23:07.558184 139740009699072 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_4_2048_64 ----
+INFO 09-02 07:23:14 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:23:34.504699 140474191165184 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_4_2048_64_counter_collection.csv
+[m[0;31mE20250902 07:23:34.514259 140474191165184 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_4_2048_64_agent_info.csv
+[m[0;33mW20250902 07:23:44.772109 140474191165184 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_4_4096_64 ----
+INFO 09-02 07:23:51 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:24:12.037343 139768485365504 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_4_4096_64_counter_collection.csv
+[m[0;31mE20250902 07:24:12.046625 139768485365504 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_4_4096_64_agent_info.csv
+[m[0;33mW20250902 07:24:21.454800 139768485365504 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_4_8192_64 ----
+INFO 09-02 07:24:28 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:24:52.314698 140448447391488 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_4_8192_64_counter_collection.csv
+[m[0;31mE20250902 07:24:52.324464 140448447391488 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_4_8192_64_agent_info.csv
+[m[0;33mW20250902 07:25:02.455610 140448447391488 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_8_256_64 ----
+INFO 09-02 07:25:12 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:25:37.298981 140177794840320 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_8_256_64_counter_collection.csv
+[m[0;31mE20250902 07:25:37.308756 140177794840320 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_8_256_64_agent_info.csv
+[m[0;33mW20250902 07:25:46.798932 140177794840320 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_8_512_64 ----
+INFO 09-02 07:25:57 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:26:19.432079 140613309163264 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_8_512_64_counter_collection.csv
+[m[0;31mE20250902 07:26:19.443764 140613309163264 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_8_512_64_agent_info.csv
+[m[0;33mW20250902 07:26:29.542118 140613309163264 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_8_1024_64 ----
+INFO 09-02 07:26:36 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:26:57.587763 140087343675136 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_8_1024_64_counter_collection.csv
+[m[0;31mE20250902 07:26:57.597219 140087343675136 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_8_1024_64_agent_info.csv
+[m[0;33mW20250902 07:27:06.691993 140087343675136 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_8_2048_64 ----
+INFO 09-02 07:27:13 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:27:34.831204 139870265530112 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_8_2048_64_counter_collection.csv
+[m[0;31mE20250902 07:27:34.840967 139870265530112 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_8_2048_64_agent_info.csv
+[m[0;33mW20250902 07:27:44.322480 139870265530112 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_8_4096_64 ----
+INFO 09-02 07:27:51 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:28:11.598735 140205135124224 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_8_4096_64_counter_collection.csv
+[m[0;31mE20250902 07:28:11.608750 140205135124224 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_8_4096_64_agent_info.csv
+[m[0;33mW20250902 07:28:20.970691 140205135124224 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_8_8192_64 ----
+INFO 09-02 07:28:28 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:28:48.273903 140528048772864 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_8_8192_64_counter_collection.csv
+[m[0;31mE20250902 07:28:48.284039 140528048772864 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_8_8192_64_agent_info.csv
+[m[0;33mW20250902 07:28:57.735062 140528048772864 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_16_256_64 ----
+INFO 09-02 07:29:04 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:29:24.791251 140597535819520 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_16_256_64_counter_collection.csv
+[m[0;31mE20250902 07:29:24.800839 140597535819520 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_16_256_64_agent_info.csv
+[m[0;33mW20250902 07:29:34.376254 140597535819520 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_16_512_64 ----
+INFO 09-02 07:29:41 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:30:01.422543 140490653394688 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_16_512_64_counter_collection.csv
+[m[0;31mE20250902 07:30:01.432534 140490653394688 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_16_512_64_agent_info.csv
+[m[0;33mW20250902 07:30:11.511455 140490653394688 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_16_1024_64 ----
+INFO 09-02 07:30:18 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:30:39.514600 140152491583232 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_16_1024_64_counter_collection.csv
+[m[0;31mE20250902 07:30:39.524151 140152491583232 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_16_1024_64_agent_info.csv
+[m[0;33mW20250902 07:30:49.195749 140152491583232 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_16_2048_64 ----
+INFO 09-02 07:30:56 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:31:17.006449 139642866038528 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_16_2048_64_counter_collection.csv
+[m[0;31mE20250902 07:31:17.017036 139642866038528 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_16_2048_64_agent_info.csv
+[m[0;33mW20250902 07:31:27.246075 139642866038528 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_16_4096_64 ----
+INFO 09-02 07:31:34 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:31:54.612745 139851847182080 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_16_4096_64_counter_collection.csv
+[m[0;31mE20250902 07:31:54.623797 139851847182080 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_16_4096_64_agent_info.csv
+[m[0;33mW20250902 07:32:04.338721 139851847182080 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_16_8192_64 ----
+INFO 09-02 07:32:11 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:32:31.998406 140576180328192 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_16_8192_64_counter_collection.csv
+[m[0;31mE20250902 07:32:32.009028 140576180328192 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_16_8192_64_agent_info.csv
+[m[0;33mW20250902 07:32:41.111696 140576180328192 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_32_256_64 ----
+INFO 09-02 07:32:48 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:33:09.582822 139854706558720 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_32_256_64_counter_collection.csv
+[m[0;31mE20250902 07:33:09.593675 139854706558720 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_32_256_64_agent_info.csv
+[m[0;33mW20250902 07:33:19.322847 139854706558720 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_32_512_64 ----
+INFO 09-02 07:33:27 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:33:48.898825 139929401558784 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_32_512_64_counter_collection.csv
+[m[0;31mE20250902 07:33:48.909573 139929401558784 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_32_512_64_agent_info.csv
+[m[0;33mW20250902 07:33:58.505983 139929401558784 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_32_1024_64 ----
+INFO 09-02 07:34:06 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:34:28.414565 140205735069440 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_32_1024_64_counter_collection.csv
+[m[0;31mE20250902 07:34:28.425951 140205735069440 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_32_1024_64_agent_info.csv
+[m[0;33mW20250902 07:34:38.348921 140205735069440 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_32_2048_64 ----
+INFO 09-02 07:34:45 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:35:06.547128 140588594026240 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_32_2048_64_counter_collection.csv
+[m[0;31mE20250902 07:35:06.557502 140588594026240 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_32_2048_64_agent_info.csv
+[m[0;33mW20250902 07:35:16.031840 140588594026240 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_32_4096_64 ----
+INFO 09-02 07:35:23 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:35:46.598319 140647675107072 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_32_4096_64_counter_collection.csv
+[m[0;31mE20250902 07:35:46.608155 140647675107072 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_32_4096_64_agent_info.csv
+[m[0;33mW20250902 07:35:56.178488 140647675107072 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_32_8192_64 ----
+INFO 09-02 07:36:05 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:36:27.642332 140014973167360 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_32_8192_64_counter_collection.csv
+[m[0;31mE20250902 07:36:27.652541 140014973167360 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_32_8192_64_agent_info.csv
+[m[0;33mW20250902 07:36:37.789530 140014973167360 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_64_256_64 ----
+INFO 09-02 07:36:46 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:37:07.475011 140200052803328 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_64_256_64_counter_collection.csv
+[m[0;31mE20250902 07:37:07.484470 140200052803328 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_64_256_64_agent_info.csv
+[m[0;33mW20250902 07:37:17.022041 140200052803328 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_64_512_64 ----
+INFO 09-02 07:37:24 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:37:45.616212 139645144700672 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_64_512_64_counter_collection.csv
+[m[0;31mE20250902 07:37:45.625435 139645144700672 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_64_512_64_agent_info.csv
+[m[0;33mW20250902 07:37:55.176679 139645144700672 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_64_1024_64 ----
+INFO 09-02 07:38:02 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:38:23.415105 140336640825088 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_64_1024_64_counter_collection.csv
+[m[0;31mE20250902 07:38:23.424303 140336640825088 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_64_1024_64_agent_info.csv
+[m[0;33mW20250902 07:38:33.209893 140336640825088 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_64_2048_64 ----
+INFO 09-02 07:38:40 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:39:00.501471 139735831357184 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_64_2048_64_counter_collection.csv
+[m[0;31mE20250902 07:39:00.510953 139735831357184 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_64_2048_64_agent_info.csv
+[m[0;33mW20250902 07:39:10.291060 139735831357184 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_64_4096_64 ----
+INFO 09-02 07:39:18 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:39:40.187695 140580812109568 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_64_4096_64_counter_collection.csv
+[m[0;31mE20250902 07:39:40.197289 140580812109568 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_64_4096_64_agent_info.csv
+[m[0;33mW20250902 07:39:49.871957 140580812109568 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_64_8192_64 ----
+INFO 09-02 07:39:57 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:40:16.881478 140542518540032 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_64_8192_64_counter_collection.csv
+[m[0;31mE20250902 07:40:16.890576 140542518540032 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_64_8192_64_agent_info.csv
+[m[0;33mW20250902 07:40:26.661029 140542518540032 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_128_256_64 ----
+INFO 09-02 07:40:33 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:40:52.339464 140117024065280 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_128_256_64_counter_collection.csv
+[m[0;31mE20250902 07:40:52.348836 140117024065280 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_128_256_64_agent_info.csv
+[m[0;33mW20250902 07:41:02.111778 140117024065280 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_128_512_64 ----
+INFO 09-02 07:41:10 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:41:30.865789 140030242821888 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_128_512_64_counter_collection.csv
+[m[0;31mE20250902 07:41:30.875996 140030242821888 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_128_512_64_agent_info.csv
+[m[0;33mW20250902 07:41:40.759050 140030242821888 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_128_1024_64 ----
+INFO 09-02 07:41:50 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:42:10.849199 140328420742912 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_128_1024_64_counter_collection.csv
+[m[0;31mE20250902 07:42:10.858717 140328420742912 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_128_1024_64_agent_info.csv
+[m[0;33mW20250902 07:42:20.680953 140328420742912 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_128_2048_64 ----
+INFO 09-02 07:42:30 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:42:50.977469 140711040517888 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_128_2048_64_counter_collection.csv
+[m[0;31mE20250902 07:42:50.987965 140711040517888 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_128_2048_64_agent_info.csv
+[m[0;33mW20250902 07:43:00.934889 140711040517888 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_128_4096_64 ----
+INFO 09-02 07:43:09 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:43:29.534180 140252046755584 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_128_4096_64_counter_collection.csv
+[m[0;31mE20250902 07:43:29.545109 140252046755584 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_128_4096_64_agent_info.csv
+[m[0;33mW20250902 07:43:39.031113 140252046755584 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m# ---- Run standalone_attn_decode_write_size_128_8192_64 ----
+INFO 09-02 07:43:46 [__init__.py:244] Automatically detected platform rocm.
+[0;31mE20250902 07:44:04.394180 140371922921216 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_128_8192_64_counter_collection.csv
+[m[0;31mE20250902 07:44:04.404591 140371922921216 output_stream.cpp:105] Opened result file: ./hwcount/pmc_1/standalone_attn_decode_write_size_128_8192_64_agent_info.csv
+[m[0;33mW20250902 07:44:14.452098 140371922921216 tool.cpp:1902] rocprofv3_error_signal_handler caught signal 11...
+[m

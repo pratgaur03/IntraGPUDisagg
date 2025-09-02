@@ -1,2 +1,2 @@
-pmc: CU_NUM OccupancyPercent MfmaFlops    
-gpu:0
+pmc: WRITE_SIZE BANDWIDTH_EA
+gpu:4
